@@ -18,15 +18,16 @@ if(!isset($_SESSION))
 	// connect to database
 	$db = mysqli_connect('localhost', 'root', '', 'transport');
 
-/*	// REGISTER USER
+	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
 		// receive all input values from the form
-		$nume = mysqli_real_escape_string($db, $_POST['nume']);
+		$first_name = mysqli_real_escape_string($db, $_POST['first_name']);
+		$last_name = mysqli_real_escape_string($db,$_POST['last_name']);
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
-		$admin = mysqli_real_escape_string($db, $_POST['admin']);
+		$cnp = mysqli_real_escape_string($db, $_POST['cnp']);
 		
 
 		// form validation: ensure that the form is correctly filled
@@ -40,18 +41,21 @@ if(!isset($_SESSION))
 
 		// register user if there are no errors in the form
 		if (count($errors) == 0) {
-			$password = md5($password_1);//encrypt the password before saving in the database
-			$query = "INSERT INTO angajat(IDAngajat, username, Nume, email, password, admin )
-								   VALUES(''	 ,'$username', '$nume', '$email', '$password', '$admin') ";
+			//$password = md5($password_1);//encrypt the password before saving in the database
+            $password = $password_1;
+			$query = "INSERT INTO user(id_user, username, last_name,first_name, password,email, cnp )
+								   VALUES(''	 ,'$username', '$last_name','$first_name', '$password', '$email', '$cnp') ";
+			print $query;
 			mysqli_query($db, $query);
 			
 
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
-			header('location: select_action.php');
+			header('location: login.php');
 		}
 
 	}
+	/*
 	
 	// EDIT USER
 	if (isset($_POST['edit_user'])) {

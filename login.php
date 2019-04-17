@@ -40,7 +40,7 @@ include ('server.php');
                 </div>
                 <hr/>
 				<p>
-			<a href="loginAdmin.php">Meniu administrator</a>
+			<a href="new_user.php">Register User</a>
 		</p>
             </form>
         </div>
