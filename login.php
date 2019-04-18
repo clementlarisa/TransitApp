@@ -4,7 +4,7 @@ include ('server.php');
 
 <html>
 <head>
-<title>Login ospatar</title>
+<title>Login</title>
     <link rel="stylesheet" href="CSS/bootstrap.css">
 </head>
 <body>
@@ -12,7 +12,7 @@ include ('server.php');
         <div style="width: 500px; margin: 50px auto;">
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
                 <center><h2>Login</h2></center>
-				<center><h3>Introdu ID-ul si parola sau scaneaza cardul unic</h3></center>
+				<center><h3>Introdu username si parola</h3></center>
                 <hr/>
                 <?php
                     if(isset($errorMsg)){
