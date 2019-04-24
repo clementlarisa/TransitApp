@@ -8,8 +8,9 @@ document.write("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n"
     "      <a class=\"nav-item nav-link active\" href=\"#\">STB <span class=\"sr-only\">(current)</span></a>\n" +
     "      <a class=\"nav-item nav-link\" href=\"#\">Metrorex</a>\n" +
     "      <a class=\"nav-item nav-link\" href=\"#\">CFR</a>\n" +
-    "      <a class=\"nav-item nav-link float-right\" href=\"#\">My account</a>\n" +
-    "      <a class=\"nav-item nav-link \" name = \"logout_user\" href = \"logout.php\">Logout</a>\n"+
     "    </div>\n" +
+
     "  </div>\n" +
+    "    <a class=\"nav-item nav-link\" style=\"color: black\" href=\"my_account.php\">My account</a>\n" +
+    "    <a class=\"nav-item nav-link\" name = \"logout_user\" style=\"color: black\" href = \"logout.php\">Logout</a>\n"+
     "</nav>")

@@ -8,7 +8,6 @@
 </head>
 <body>
 <?php
-    print $_SESSION['logged_in'];
     if($_SESSION['logged_in']){
 ?>
     <script src = "JS/menuAfterLogin.js"></script>
