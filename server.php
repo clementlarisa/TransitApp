@@ -14,7 +14,7 @@ if(!isset($_SESSION))
 
 	$errors = array(); 
 	$_SESSION['success'] = "";
-
+	//$_SESSION['logged_in'] = "";
 	// connect to database
 	$db = mysqli_connect('localhost', 'root', '', 'transport');
 
@@ -55,6 +55,7 @@ if(!isset($_SESSION))
 		}
 
 	}
+
 	/*
 	
 	// EDIT USER
@@ -159,7 +160,7 @@ if(!isset($_SESSION))
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['first_name'] = $nn['first_name'];
-
+                $_SESSION['logged_in'] = "1";
 				$_SESSION['success'] = "You are now logged in";
 
 				header('location: home.php');

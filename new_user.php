@@ -60,7 +60,8 @@ include_once('server.php');
                     <center><input type="submit" name="reg_user" value="Inregistrare" class="btn btn-primary"></center>
                 </div>
                 <hr/>
-                <a href="login.php">Home</a>
+                <a href="login.php">Login</a>
+                <a href ="home.php">Home</a>
             </form>
         </div>
     </div>
