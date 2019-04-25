@@ -152,7 +152,7 @@ if(!isset($_SESSION))
 		if (count($errors) == 0) {
 		
 			//$password = md5($password);
-			$query = "SELECT first_name FROM user WHERE username='$username' AND password='$password'";
+			$query = "SELECT username, first_name , last_name ,birthdate, telephone, email , cnp  FROM user WHERE username='$username' AND password='$password'";
 			print $query;
 			$results = mysqli_query($db, $query);
 			$nn = mysqli_fetch_assoc($results);
@@ -160,6 +160,11 @@ if(!isset($_SESSION))
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
 				$_SESSION['first_name'] = $nn['first_name'];
+				$_SESSION['last_name'] = $nn['last_name'];
+				$_SESSION['birthdate'] = $nn['birthdate'];
+				$_SESSION['telephone'] = $nn ['telephone'];
+				$_SESSION['email'] = $nn['email'];
+				$_SESSION['cnp'] = $nn['cnp'];
                 $_SESSION['logged_in'] = "1";
 				$_SESSION['success'] = "You are now logged in";
 
