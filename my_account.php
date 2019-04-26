@@ -10,12 +10,18 @@ if($_SESSION['logged_in']){
         <body>
         <script src = "JS/menuAfterLogin.js"></script>
         <div class="container">
-            <div class="row mt-5">
-                <div class="col-md-auto bg-light">
+            <div class="row  bg-light">
+                <div class="col-md-auto mt-5">
                     <script src ="JS/myAccountVertMenu.js"></script>
                 </div>
-                <div class="col-sm">
-                    
+                <div class="col-sm mt-5">
+                    <center><h2 class="mx-auto">
+                        Detalii cont
+                    </h2></center>
+                    <div style = "display: inline"><p><img src="Imagini/person.png" style = "height: 2%; width: 2%"><?php echo $_SESSION['last_name'] . ' ' . $_SESSION['first_name'] ?></p></div>
+                    <div style = "display: inline"><p><img src="Imagini/birthday.png" style = "height: 2%; width: 2%"><?php echo $_SESSION['birthdate'] ?></p></div>
+                    <div style = "display: inline"><p><img src="Imagini/email.png" style = "height: 2%; width: 2%"><?php echo $_SESSION['email'] ?></p></div>
+                    <div style = "display: inline"><p><img src="Imagini/telephone.png" style = "height: 2%; width: 2%"><?php echo $_SESSION['telephone'] ?></p></div>
                 </div>
             </div>
         </div>
