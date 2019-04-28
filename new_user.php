@@ -38,6 +38,10 @@ include_once('server.php');
 					<label >Username:</label>
 					<input type="text" name="username" class="form-control" autocomplete="off" >
 				</div>
+                <div class="form-group">
+                    <label >Data de nastere(zz-ll-aaaa):</label>
+                    <input type="text" name="birthdate" class="form-control" autocomplete="off" >
+                </div>
 				<div class="form-group">
 					<label>Parola:</label>
 					<input type="password" name="password_1" class="form-control" autocomplete="off">
@@ -50,6 +54,10 @@ include_once('server.php');
 					<label >email:</label>
 					<input type="text" name="email" class="form-control" autocomplete="off" >
 				</div>
+                <div class="form-group">
+                    <label >Telefon:</label>
+                    <input type="text" name="telephone" class="form-control" autocomplete="off" >
+                </div>
 				<div class="form-group">
                     <label >cnp:</label>
                     <input type="text" name="cnp" class="form-control" autocomplete="off" >

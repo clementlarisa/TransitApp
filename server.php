@@ -8,8 +8,10 @@ if(!isset($_SESSION))
 	$username = "";
     $last_name = "";
     $first_name = "";
+    $birthdate = "";
     $password = "";
 	$email    = "";
+	$telephone = "";
 	$cnp = "";
 
 	$errors = array(); 
@@ -24,9 +26,11 @@ if(!isset($_SESSION))
 		$first_name = mysqli_real_escape_string($db, $_POST['first_name']);
 		$last_name = mysqli_real_escape_string($db,$_POST['last_name']);
 		$username = mysqli_real_escape_string($db, $_POST['username']);
+		$birthdate = mysqli_real_escape_string($db,$_POST['birthdate']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
 		$password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
+		$telephone = mysqli_real_escape_string($db,$_POST['telephone']);
 		$cnp = mysqli_real_escape_string($db, $_POST['cnp']);
 		
 
@@ -43,8 +47,8 @@ if(!isset($_SESSION))
 		if (count($errors) == 0) {
 			//$password = md5($password_1);//encrypt the password before saving in the database
             $password = $password_1;
-			$query = "INSERT INTO user(id_user, username, last_name,first_name, password,email, cnp )
-								   VALUES(''	 ,'$username', '$last_name','$first_name', '$password', '$email', '$cnp') ";
+			$query = "INSERT INTO user(id_user, username, last_name,first_name,birthdate, password,telephone,email, cnp )
+								   VALUES(''	 ,'$username', '$last_name','$first_name','$birthdate', '$password','$telephone', '$email', '$cnp') ";
 			print $query;
 			mysqli_query($db, $query);
 			
@@ -55,6 +59,15 @@ if(!isset($_SESSION))
 		}
 
 	}
+
+	//Edit Name
+    if(isset($_POST['change_email'])){
+        $user = 'username';
+        $email = mysqli_real_escape_string($db , $_POST['email']);
+        $query = "UPDATE user SET email = $email WHERE username = $_SESSION[$user]";
+        print $query;
+        mysqli_query($db, $query);
+    }
 
 	/*
 	
