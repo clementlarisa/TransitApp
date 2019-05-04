@@ -5,16 +5,18 @@ if($_SESSION['logged_in']){
         <html>
         <head>
             <title><?php echo $_SESSION['first_name'] ."'s".' ' . 'Account'?></title>
+            <link rel="stylesheet" href="CSS/footer.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         </head>
         <body>
         <script src = "JS/menuAfterLogin.js"></script>
-        <div class="container">
+        <div class="container bg-light" style="height:100%;">
             <div class="row  bg-light">
                 <div class="col-md-auto mt-5">
                     <script src ="JS/myAccountVertMenu.js"></script>
                 </div>
-                <div class="col-sm mt-5">
+                <div class="col-sm mt-5" >
                     <center><h2 class="mx-auto">
                         Detalii cont
                     </h2></center>
@@ -25,7 +27,7 @@ if($_SESSION['logged_in']){
                 </div>
             </div>
         </div>
-
+        <script src="JS/footer.js"></script>
         </body>
         </html>
         <?php } else {

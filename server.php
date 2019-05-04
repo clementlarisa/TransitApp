@@ -63,7 +63,7 @@ if(!isset($_SESSION))
     if(isset($_POST['change_username'])){
         $user = 'user_id';
         $username = mysqli_real_escape_string($db , $_POST['username']);
-        $query = "UPDATE user SET username = $username WHERE id_user = $_SESSION[$user]";
+        $query = "UPDATE user SET username = '$username' WHERE id_user = '$_SESSION[$user]'";
         $_SESSION['username'] = $username;
         print $query;
         mysqli_query($db, $query);
@@ -83,7 +83,7 @@ if(!isset($_SESSION))
         if(count($errors)==0)
         {
             $user = 'user_id';
-            $query = "UPDATE user SET password = $password_1 WHERE id_user = $_SESSION[$user]";
+            $query = "UPDATE user SET password = $password_1 WHERE id_user = '$_SESSION[$user]'";
             mysqli_query($db,$query);
             header('location: login.php');
         }
@@ -92,7 +92,7 @@ if(!isset($_SESSION))
     if(isset($_POST['change_email'])){
         $user = 'user_id';
         $email = mysqli_real_escape_string($db , $_POST['email']);
-        $query = "UPDATE user SET email = $email WHERE id_user = $_SESSION[$user]";
+        $query = "UPDATE user SET email = $email WHERE id_user = '$_SESSION[$user]'";
         print $query;
         mysqli_query($db, $query);
         header('location: login.php');

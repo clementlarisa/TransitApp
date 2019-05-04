@@ -12,8 +12,8 @@ include_once('server.php');
 
 <div class="container">
     <div style="width: 500px; margin: 50px auto;">
-        <form method="post" action="new_user.php">
-            <center><h2>Inregistrare User</h2></center>
+        <form method="post" action="change_username.php">
+            <center><h2>Schimbare username</h2></center>
             <hr/>
             <?php
             if(isset($successMsg)){
@@ -34,7 +34,7 @@ include_once('server.php');
 
 
             <div class="form-group">
-                <center><input type="submit" name="change_username" value="Inregistrare" class="btn btn-primary"></center>
+                <center><input type="submit" name="change_username" value="Schimbare username" class="btn btn-primary"></center>
             </div>
             <hr/>
             <a href="my_account_edit.php">Back</a>
