@@ -60,13 +60,42 @@ if(!isset($_SESSION))
 
 	}
 
-	//Edit Name
-    if(isset($_POST['change_email'])){
-        $user = 'username';
-        $email = mysqli_real_escape_string($db , $_POST['email']);
-        $query = "UPDATE user SET email = $email WHERE username = $_SESSION[$user]";
+    if(isset($_POST['change_username'])){
+        $user = 'user_id';
+        $username = mysqli_real_escape_string($db , $_POST['username']);
+        $query = "UPDATE user SET username = $username WHERE id_user = $_SESSION[$user]";
+        $_SESSION['username'] = $username;
         print $query;
         mysqli_query($db, $query);
+        header('location: login.php');
+    }
+
+    if(isset($_POST['change_password'])) {
+        $password_1 = mysqli_real_escape_string($db, $_POST['password1']);
+        $password_2 = mysqli_real_escape_string($db, $_POST['password2']);
+        if (empty($password_1)) {
+            array_push($errors, "INTRODU O PAROLA");
+        }
+
+        if ($password_1 != $password_2) {
+            array_push($errors, "Cele doua parole nu se potrivesc");
+        }
+        if(count($errors)==0)
+        {
+            $user = 'user_id';
+            $query = "UPDATE user SET password = $password_1 WHERE id_user = $_SESSION[$user]";
+            mysqli_query($db,$query);
+            header('location: login.php');
+        }
+    }
+
+    if(isset($_POST['change_email'])){
+        $user = 'user_id';
+        $email = mysqli_real_escape_string($db , $_POST['email']);
+        $query = "UPDATE user SET email = $email WHERE id_user = $_SESSION[$user]";
+        print $query;
+        mysqli_query($db, $query);
+        header('location: login.php');
     }
 
 	/*
@@ -165,13 +194,15 @@ if(!isset($_SESSION))
 		if (count($errors) == 0) {
 		
 			//$password = md5($password);
-			$query = "SELECT username, first_name , last_name ,birthdate, telephone, email , cnp  FROM user WHERE username='$username' AND password='$password'";
+			$query = "SELECT id_user,username, first_name , last_name ,birthdate, telephone, email , cnp  FROM user WHERE username='$username' AND password='$password'";
 			print $query;
 			$results = mysqli_query($db, $query);
 			$nn = mysqli_fetch_assoc($results);
 
 			if (mysqli_num_rows($results) == 1) {
 				$_SESSION['username'] = $username;
+
+				$_SESSION['user_id'] = $nn['id_user'];
 				$_SESSION['first_name'] = $nn['first_name'];
 				$_SESSION['last_name'] = $nn['last_name'];
 				$_SESSION['birthdate'] = $nn['birthdate'];

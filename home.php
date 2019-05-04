@@ -48,12 +48,12 @@
         </div>
         <div class = "row">
             <div class="col-sm">
-                One of three columns
+                <img src = "Imagini/SecondImageHome.jpg" style = "width:100%">
             </div>
         </div>
         <div class = row>
             <div class="col-sm">
-                One of three columns
+                <img src = "Imagini/ThirdImageHome.jpg" style = "width:100%">
             </div>
         </div>
     </div>

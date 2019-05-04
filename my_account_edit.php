@@ -15,21 +15,37 @@ if($_SESSION['logged_in']){
                 <script src ="JS/myAccountVertMenu.js"></script>
             </div>
             <div class="col-sm mt-5">
-                <center><h2 class="mx-auto">
-                        Schimbare detali cont
-                    </h2></center>
-
-                    <form >
-
-
-
-                        <div class = "d-inline-block">
-                            <label >Email:</label>
-                            <input type="text" name="email" class="form-control" autocomplete="off" >
-                            <input type="submit" name="change_email" value="Schimbare" class="btn btn-primary">
+                <center><h2 class="mx-auto">Schimbare detali cont</h2></center>
+                <form>
+                    <div>
+                        <label class="mt-1">Schimba Username:</label>
+                        <div>
+                            <a href = "change_username.php">
+                                <input type="button" value = "Schimbare Username" class="btn btn-primary">
+                            </a>
                         </div>
-                    </form>
-
+                    </div>
+                </form>
+                <form>
+                    <div>
+                        <label class="mt-2">Schimbare Parola:</label>
+                        <div >
+                            <a href = "change_password.php">
+                                <input type="button" value = "Schimbare Parola" class="btn btn-primary">
+                            </a>
+                        </div>
+                    </div>
+                </form>
+                <form>
+                    <div>
+                        <label class = "mt-1">Email:</label>
+                        <div>
+                            <a href = "change_email.php">
+                                <input type="button" value = "Schimbare Email" class="btn btn-primary">
+                            </a>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
