@@ -32,6 +32,7 @@ if(!isset($_SESSION))
 		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$telephone = mysqli_real_escape_string($db,$_POST['telephone']);
 		$cnp = mysqli_real_escape_string($db, $_POST['cnp']);
+		$nr_legitimatie = mysqli_real_escape_string($db, $_POST['nr_legitimatie']);
 		
 
 		// form validation: ensure that the form is correctly filled
@@ -47,8 +48,8 @@ if(!isset($_SESSION))
 		if (count($errors) == 0) {
 			//$password = md5($password_1);//encrypt the password before saving in the database
             $password = $password_1;
-			$query = "INSERT INTO user(id_user, username, last_name,first_name,birthdate, password,telephone,email, cnp )
-								   VALUES(''	 ,'$username', '$last_name','$first_name','$birthdate', '$password','$telephone', '$email', '$cnp') ";
+			$query = "INSERT INTO user(id_user, username, last_name,first_name,birthdate, password,telephone,email, cnp, nr_legitimatie )
+								   VALUES(''	 ,'$username', '$last_name','$first_name','$birthdate', '$password','$telephone', '$email', '$cnp' , '$nr_legitimatie') ";
 			print $query;
 			mysqli_query($db, $query);
 			
@@ -96,6 +97,14 @@ if(!isset($_SESSION))
         print $query;
         mysqli_query($db, $query);
         header('location: login.php');
+    }
+
+    if(isset($_POST['delete_user'])){
+        $user_id = 'user_id';
+        $query = "DELETE FROM user , abonamet , istoric WHERE id_user = '$_SESSION[$user_id]'";
+        mysqli_query($db, $query);
+        $_SESSION['logged_in'] = 0;
+        header('location: home.php');
     }
 
 	/*

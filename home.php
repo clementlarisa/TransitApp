@@ -82,5 +82,11 @@
             </div>
         </div>
     </div>
-    <script src="JS/footer.js"></script>
+    <?php
+    if($_SESSION['logged_in']){
+        ?>
+        <script src = "JS/footer.js"></script>
+    <?php } else { ?>
+        <script src = "JS/footerBeforeLogin.js"></script>
+    <?php } ?>
 </body>

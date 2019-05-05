@@ -1,8 +1,48 @@
 <?php
     include ("server.php");
-    $user_id = 'user_id';
-    $query = "DELETE FROM user WHERE id_user = '$_SESSION[$user_id]'";
-    mysqli_query($db, $query);
-    $_SESSION['logged_in'] = 0;
-    header('location: home.php');
 ?>
+
+<html>
+<head>
+    <title>Adaugare ospatar</title>
+    <link rel="stylesheet" href="CSS/bootstrap.css">
+</head>
+<body>
+
+<div class="container">
+    <div style="width: 500px; margin: 50px auto;">
+        <form method="post" action="new_user.php">
+            <center><h2>Sunteti sigur ca doriti sa stergeti contul? Modificarile sunt permanente!</h2></center>
+            <hr/>
+            <?php
+            if(isset($successMsg)){
+                ?>
+                <div class="alert alert-success">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                    <?php echo $successMsg; ?>
+                </div>
+                <?php
+            }
+            ?>
+
+            <div class="form-row">
+               <div class="col">
+                   <a href="my_account.php"><input type="button" value="Nu"></a>
+               </div>
+                <div class="col">
+                    <input type = "submit" name="delete_user" value="Da" style = "background-color: red">
+                </div>
+            </div>
+            <hr/>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

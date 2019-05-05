@@ -62,6 +62,10 @@ include_once('server.php');
                     <label >cnp:</label>
                     <input type="text" name="cnp" class="form-control" autocomplete="off" >
                 </div>
+                <div class="form-group">
+                    <label >Numar legitimatie:</label>
+                    <input type="text" name="nr_legitimatie" class="form-control" autocomplete="off" >
+                </div>
 				
                 
                 <div class="form-group">

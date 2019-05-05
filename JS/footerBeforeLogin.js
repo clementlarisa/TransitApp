@@ -20,9 +20,7 @@ document.write("<footer class=\"footer-distributed\">\n" +
     "\t\t\t\t\t·\n" +
     "\t\t\t\t\t<a href=\"#\">CFR</a>\n" +
     "\t\t\t\t\t·\n" +
-    "\t\t\t\t\t<a href=\"my_account.php\">My Account</a>\n" +
-    "\t\t\t\t\t·\n" +
-    "\t\t\t\t\t<a href=\"logout.php\">Logout</a>\n" +
+    "\t\t\t\t\t<a href=\"login.php\">Login</a>\n" +
     "\t\t\t\t</p>\n" +
     "\n" +
     "\t\t\t\t<p>Student Transport &copy; 2019</p>\n" +
