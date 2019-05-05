@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <title>Adaugare ospatar</title>
+    <title>Stergere cont</title>
     <link rel="stylesheet" href="CSS/bootstrap.css">
 </head>
 <body>
@@ -25,12 +25,12 @@
             }
             ?>
 
-            <div class="form-row">
+            <div class="row">
                <div class="col">
-                   <a href="my_account.php"><input type="button" value="Nu"></a>
+                   <a href="my_account.php"><input type="button" class="form-control btn btn-primary" value="Nu"></a>
                </div>
                 <div class="col">
-                    <input type = "submit" name="delete_user" value="Da" style = "background-color: red">
+                    <input type = "submit" name="delete_user" value="Da" class=" form-control  btn btn-primary" style = "background-color: red">
                 </div>
             </div>
             <hr/>
