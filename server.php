@@ -266,15 +266,16 @@ if (isset($_POST['save'])) {
     $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
     // $user_id=mysqli_real_escape_string($db,$_SESSION['user_id']);
     $user_id = 'user_id';
-    $query = "INSERT INTO abonament(abon_id, user_id, tip_id, expiration_date)
-								   VALUES('' ,'$_SESSION[$user_id]', '1','$expiration_date') ";
-    print $_SESSION[$user_id];
-    print $query;
-    mysqli_query($db, $query);
+    //if(count($errors)==0){
+        $query = "INSERT INTO abonament (abon_id, user_id, tip_id, expiration_date)
+                                       VALUES('' , $_SESSION[$user_id] , 1 ,STR_TO_DATE('$expiration_date', '%m/%d/%Y')) ";
+        print $_SESSION[$user_id];
+        print $query;
+        mysqli_query($db, $query);
 
-       // $_SESSION['success'] = "Ai introdus cu succes un abonament";
-    header('location: stb.php');
-
+           // $_SESSION['success'] = "Ai introdus cu succes un abonament";
+        header('location: stb.php');
+    //}
 
 
 }

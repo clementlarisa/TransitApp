@@ -34,7 +34,7 @@ if($_SESSION['logged_in']){
         ?>
 
         <div class="form-row" style="margin-top:30px">
-            <form method="post" action="stb.php">
+            <form method="post" action="stb-abonament.php">
                 <div class="form-group">
                     <label for="inputDate">Data de incepere a abonamentului </label>
                     <input type="text" size="20" id="inputDate" value="05-05-2019" class="form_datetime" > </br>
