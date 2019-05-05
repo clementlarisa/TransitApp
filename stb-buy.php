@@ -1,69 +1,97 @@
+
 <?php include ('server.php');
 if($_SESSION['logged_in']){
 ?>
-
-    <!DOCTYPE html>
+<DOCTYPE html>
     <html>
-        <head>
-            <title>STB</title>
-            <link rel="stylesheet" href="CSS/footer.css">
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            <script src="JS/stbAbonament.js"> </script>
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        </head>
+    <head>
 
-        <body>
-        <?php
-        if($_SESSION['logged_in']){
-            ?>
-            <script src = "JS/menuAfterLogin.js"></script>
-        <?php } else { ?>
-            <script src = "JS/menu.js"></script>
-        <?php } ?>
-
-
+        <link rel="stylesheet" href="CSS/footer.css">
+        <link rel="stylesheet" href="CSS/card.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-        <div class="container" id="space">
-            <div class="row">
-                <div class="col-md-6" style="background-color:lavender;top:20px" >
-                    <!--<img src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width: 100%">
-                    <h2 style="text-align: center">Cumpara abonament</h2> -->
-                    <img class="img-rounded img-responsive"  src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width:70%; margin: auto; display:block">
-                    <div>
-                        <p>
-                            <a href="stb-abonament.php" class="btn btn-lg btn-primary" style="margin: auto; display:table">Abonament</a> -->
-                           <!-- <button class="btn btn-lg btn-primary" onclick="abonament()" style="margin: 0 auto; display:block">Abonament</button> -->
-                        </p>
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    </head>
+    <body>
+    <script src = "JS/menuAfterLogin.js"></script>
+    <script src="JS/stbAbonament.js"></script>>
+    <!--  <div class="container bg-light" id="contain" style="height:100%;">
+          <h2 style="margin-top:7%; margin-bottom:3%">Cumpara </h2>-->
+
+    <?php
+    if(isset($successMsg)){
+        ?>
+        <div class="alert alert-success">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            <?php echo $successMsg; ?>
+        </div>
+        <?php
+    }
+    ?>
+
+
+    <div class="container bg-light" style="height:100%">
+        <div class="row">
+            <ul>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab  item" style="left:10%">
+                    <div class="folded-corner service_tab_1">
+                        <div class="text">
+                            <i class="fa fa-credit-card  fa-5x fa-icon-image"></i>
+                            <p class="item-title">
+                               <!-- <a href="stb-abonament.php" role="button" class="btn btn-outline-info"> Abonament</a>-->
+                            <h3>Abonament</h3>
+                            </p><!-- /.item-title -->
+                            <p>
+                                Fiecare abonament dispunde de un id unic si expira la 30 de zile de la activarea acestuia. Cu ajutorul chitantei trimise pe mail puteti opta pentru decontarea acestuia si obtinerea celor 25 lei.
+                            </p>
+                            <a role="button" class="btn btn-primary btn-sm" href="stb-abonament.php">Creeaza abonament </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-md-offset-2"  style="background-color:lavender; left:5%;top:20px">
-                        <!--<h2 style="text-align: center">Trasee disponibile </h2>-->
-                        <img class="img-rounded img-responsive"  src="Imagini/stb-route.png" class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
-                        <div>
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab item" style="left:27%">
+                    <div class="folded-corner service_tab_1">
+                        <div class="text">
+                            <i class="fa fa-bus fa-5x fa-icon-image" ></i>
+                            <p class="item-title">
+                            <h3> Calatorie</h3>
+                            </p><!-- /.item-title -->
                             <p>
-                                <button class="btn btn-lg btn-primary" onclick="myFunction()" style="margin: auto; display:block">Calatorie</button>
+                               Fiecare calatorie dispune de un cod unic pe care va trebui sa il prezentati la orice control din mijlocul de transport in comun, la cererea personaelor autorizate. O calatorie costa 1,30 lei.
                             </p>
+                            <a role="button" class="btn btn-primary btn-sm" href="stb-calatorie.php">Cumpara calatorie </a>
                         </div>
+                    </div>
                 </div>
-            </div>
+
+
+            </ul>
         </div>
+    </div>
 
 
-        <?php
-        if($_SESSION['logged_in']){
-
-             echo '<script src = "JS/footer.js"></script>';
-        } else {
-           echo '<script src = "JS/footerBeforeLogin.js"></script>';
-         } ?>
-        </body>
+    <?php
+    if($_SESSION['logged_in']){
+        ?>
+        <script src = "JS/footer.js"></script>
+    <?php } else { ?>
+        <script src = "JS/footerBeforeLogin.js"></script>
+    <?php } ?>
+    </body>
     </html>
-<?php } else {
-    header('location:login.php');
-}?>
+    <?php } else {
+        header('location:login.php');
+    } ?>
+
+
+
+
+

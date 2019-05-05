@@ -76,16 +76,4 @@
     var currDate = new Date();
     $(".form_datetime").datepicker({format: 'dd-mm-yyyy', startDate: currDate});
 
-
-
-/*
-var submit=document.createElement("div");
-submit.setAttribute("class", "form-group");
-var inpt_sub=document.createElement("input");
-inpt_sub.setAttribute("type", "submit");
-inpt_sub.setAttribute("name", "save");
-inpt_sub.setAttribute("value", "Creeaza abonament");
-inpt_sub.setAttribute("class", "btn btn-primary");
-form.appendChild(submit);
-submit.appendChild(inpt_sub);*/
-
+ var div_cont=document.getElementById("contain");

@@ -32,7 +32,7 @@ include_once('server.php');
             </div>
 
             <div class="form-group">
-                <center><input type="submit" name="change_email" value="Schima email" class="btn btn-primary"></center>
+                <center><input type="submit" name="change_email" value="Schimba email" class="btn btn-primary"></center>
             </div>
             <hr/>
             <a href="my_account_edit.php">Inapoi</a>

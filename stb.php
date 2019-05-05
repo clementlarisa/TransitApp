@@ -16,7 +16,7 @@ if($_SESSION['logged_in']){
     <?php } else { ?>
         <script src = "JS/menu.js"></script>
     <?php } ?>
-        <div class="container" >
+         <div class="container bg-light" style="height:100%;">
             <div class="row">
                 <div class="col-md-6" style="background-color:lavender;top:20px" >
                     <!--<img src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width: 100%">
@@ -52,6 +52,13 @@ if($_SESSION['logged_in']){
                 </div>
             </div>
         </div>
+    <?php
+    if($_SESSION['logged_in']){
+        ?>
+        <script src = "JS/footer.js"></script>
+    <?php } else { ?>
+        <script src = "JS/footerBeforeLogin.js"></script>
+    <?php } ?>
     </body>
     </html>
 <?php } else {

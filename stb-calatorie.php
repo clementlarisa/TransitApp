@@ -1,3 +1,4 @@
+
 <?php include ('server.php');
 if($_SESSION['logged_in']){
     ?>
@@ -6,7 +7,6 @@ if($_SESSION['logged_in']){
     <head>
 
         <link rel="stylesheet" href="CSS/footer.css">
-        <link rel="stylesheet" href="CSS/card.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
@@ -21,7 +21,7 @@ if($_SESSION['logged_in']){
     <script src = "JS/menuAfterLogin.js"></script>
     <script src="JS/stbAbonament.js"></script>>
     <div class="container bg-light" id="contain" style="height:100%;">
-        <h2 style="margin-top:7%; margin-bottom:3%">Creeaza-ti propriul abonament la STB </h2>
+        <h2 style="margin-top:7%; margin-bottom:3%">Cumpara calatorie </h2>
 
         <?php
         if(isset($successMsg)){
@@ -35,8 +35,7 @@ if($_SESSION['logged_in']){
         ?>
 
         <div class="form-row" style="margin-top:30px">
-
-            <form method="post" action="stb-abonament.php">
+            <form method="post" action="stb-calatorie.php">
                 <div class="form-group">
                     <label for="inputDate">Data de incepere a abonamentului </label>
                     <input type="text" size="20" id="inputDate" value="05-05-2019" class="form_datetime" > </br>
@@ -49,17 +48,7 @@ if($_SESSION['logged_in']){
                     <center><input type="submit" name="save" value="Creeaza abonament" class="btn btn-primary" ></center>
                 </div>
             </form>
-
-            <div class="col-md-6" style="left:10%" id="hiddenDiv" style="display:none">
-                <h5> Abonamentul cu id-ul <?php echo $_SESSION['user_id'] ;?> va fi creat imediat. Il vei putea vedea pe profilul tau dupa plata sumei de 25 de lei..</h5>
-
-                <a href="stb-pay.php" class="btn btn-lg btn-primary" > Continua la checkout</a>
-            </div>
-
-
         </div>
-
-
 
     </div>
 
