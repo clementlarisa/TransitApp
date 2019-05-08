@@ -7,7 +7,7 @@ document.write("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n"
     "    <div class=\"navbar-nav\">\n" +
     "      <a class=\"nav-item nav-link active\" href=\"stb.php\">STB <span class=\"sr-only\">(current)</span></a>\n" +
     "      <a class=\"nav-item nav-link\" href=\"#\">Metrorex</a>\n" +
-    "      <a class=\"nav-item nav-link\" href=\"#\">CFR</a>\n" +
+    "      <a class=\"nav-item nav-link\" href=\"cfr.php\">CFR</a>\n" +
     "    </div>\n" +
 
     "  </div>\n" +
