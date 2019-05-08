@@ -66,8 +66,7 @@ include_once('server.php');
                     <label >Numar legitimatie:</label>
                     <input type="text" name="nr_legitimatie" class="form-control" autocomplete="off" >
                 </div>
-				
-                
+
                 <div class="form-group">
                     <center><input type="submit" name="reg_user" value="Inregistrare" class="btn btn-primary"></center>
                 </div>
@@ -77,12 +76,6 @@ include_once('server.php');
             </form>
         </div>
     </div>
-	
-	
-	
-	
 
-
-	
 </body>
 </html>

@@ -264,10 +264,12 @@ if(!isset($_SESSION))
 // Adaugare abonament
 if (isset($_POST['save'])) {
     $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
-    $_SESSION['beginDate'] = $_POST['beginDate'];
-    // $user_id=mysqli_real_escape_string($db,$_SESSION['user_id']);
-    $user_id = 'user_id';
-    //if(count($errors)==0){
+    $user_id = 'user_id'; ?>
+        <script>
+            var x=document.getElementById("hiddenDiv");
+            x.style.display="initial";
+        </script>
+<?php
         $query = "INSERT INTO abonament (abon_id, user_id, tip_id, expiration_date)
                                        VALUES('' , $_SESSION[$user_id] , 1 ,STR_TO_DATE('$expiration_date', '%m/%d/%Y')) ";
         print $_SESSION[$user_id];
@@ -275,10 +277,9 @@ if (isset($_POST['save'])) {
         mysqli_query($db, $query);
 
            // $_SESSION['success'] = "Ai introdus cu succes un abonament";
-        header('location: stb.php');
-    //}
-
+        header('location: stb-abonament.php');
 
 }
+// Stergerea abonamentului dupa trecerea celor 30 de zile???
 
 
