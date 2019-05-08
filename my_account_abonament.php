@@ -14,8 +14,13 @@ if($_SESSION['logged_in']){
                 width:100%;
                 border: 2px solid black;
             }
+            th{
+                border:2px solid black;
+                text-align: center;
+            }
             td{
                 border:2px solid black;
+                text-align: center;
             }
             tr{
                 border:2px solid black;
@@ -63,20 +68,21 @@ if($_SESSION['logged_in']){
                         $nn2 = mysqli_fetch_assoc($results2);
                         $nume_tip =  $nn2['nume_tip'];
                         echo "<td>" . $nume_tip . "</td>";
-                        $query = "SELECT expiration_date FROM abonament WHERE user_id = '$_SESSION[$user_id]' and tip_id = '$id_tip'";
+                        $query = "SELECT expiration_date, begin_date FROM abonament WHERE user_id = '$_SESSION[$user_id]' and tip_id = '$id_tip'";
                         $results3 = mysqli_query($db, $query);
                         $nn3 = mysqli_fetch_assoc($results3);
                         $expiration_date = $nn3['expiration_date'];
+                        $begin_date = $nn3['begin_date'];
                         echo "<td>" . $expiration_date . "</td>";
                         if($expiration_date < date("Y-m-d"))
                         {
-                            echo "<td style = 'color:red'> Expirat </td>";
+                            echo "<td style = 'color:red'> Expirat <a href = 'stb_abonament_reinoire.php'><input value='Reinoire' type='button' class='btn btn-primary'></a></td>";
                         }
-                        else if($_SESSION['beginDate']> date("Y-m-d")){
-                            echo "<td style = 'color: blue'> Inca nu este activ!</td>";
+                        else if($begin_date > date("Y-m-d")){
+                            echo "<td style = 'color:blue'> Inca nu este activ! Abonamentul incepe de pe: " . $begin_date . "</td>";
                         }
                             else{
-                                echo "<td style = 'color: green'> Valabil</td>";
+                                echo "<td style = 'color:green'> Valabil</td>";
                             }
                         echo "</tr>";
                     }
@@ -85,6 +91,7 @@ if($_SESSION['logged_in']){
                 else{
                     echo "<center><p>Nu aveti abonamente create!</p></center>";
                 }
+                print $_SESSION['beginDate'];
                 ?>
             </div>
         </div>
