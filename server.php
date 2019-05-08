@@ -264,6 +264,7 @@ if(!isset($_SESSION))
 // Adaugare abonament
 if (isset($_POST['save'])) {
     $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
+    $_SESSION['beginDate'] = $_POST['beginDate'];
     // $user_id=mysqli_real_escape_string($db,$_SESSION['user_id']);
     $user_id = 'user_id';
     //if(count($errors)==0){

@@ -72,9 +72,12 @@ if($_SESSION['logged_in']){
                         {
                             echo "<td style = 'color:red'> Expirat </td>";
                         }
-                        else{
-                            echo "<td style = 'color: green'> Valabil</td>";
+                        else if($_SESSION['beginDate']> date("Y-m-d")){
+                            echo "<td style = 'color: blue'> Inca nu este activ!</td>";
                         }
+                            else{
+                                echo "<td style = 'color: green'> Valabil</td>";
+                            }
                         echo "</tr>";
                     }
                     echo "</table>";
