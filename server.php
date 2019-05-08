@@ -102,7 +102,7 @@ if(!isset($_SESSION))
 
     if(isset($_POST['delete_user'])){
         $user_id = 'user_id';
-        $query = "DELETE FROM user , abonament , istoric WHERE id_user = '$_SESSION[$user_id]'";
+        $query = "DELETE FROM user WHERE id_user = '$_SESSION[$user_id]'";
         mysqli_query($db, $query);
         $_SESSION['logged_in'] = 0;
         header('location: home.php');
@@ -276,6 +276,25 @@ if (isset($_POST['save'])) {
 
            // $_SESSION['success'] = "Ai introdus cu succes un abonament";
         header('location: stb.php');
+    //}
+
+
+}
+
+if (isset($_POST['reinoire'])) {
+    $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
+    $begin_date = mysqli_real_escape_string($db , $_POST['beginDate']);
+    // $user_id=mysqli_real_escape_string($db,$_SESSION['user_id']);
+    $user_id = 'user_id';
+    //if(count($errors)==0){
+    $query = "UPDATE abonament SET begin_date = STR_TO_DATE('$begin_date', '%m/%d/%Y') , expiration_date=STR_TO_DATE('$expiration_date', '%m/%d/%Y')
+                  WHERE user_id = $_SESSION[$user_id] and tip_id = 1";
+    print $_SESSION[$user_id];
+    print $query;
+    mysqli_query($db, $query);
+
+    // $_SESSION['success'] = "Ai introdus cu succes un abonament";
+    header('location: my_account_abonament.php');
     //}
 
 

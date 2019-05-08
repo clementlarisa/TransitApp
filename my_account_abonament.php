@@ -76,13 +76,13 @@ if($_SESSION['logged_in']){
                         echo "<td>" . $expiration_date . "</td>";
                         if($expiration_date < date("Y-m-d"))
                         {
-                            echo "<td style = 'color:red'> Expirat </td>";
+                            echo "<td style = 'color:red'> Expirat <a href = 'stb_abonament_reinoire.php'><input value='Reinoire' type='button' class='btn btn-primary'></a></td>";
                         }
                         else if($begin_date > date("Y-m-d")){
-                            echo "<td style = 'color: blue'> Inca nu este activ! Abonamentul incepe de pe: " . $begin_date . "</td>";
+                            echo "<td style = 'color:blue'> Inca nu este activ! Abonamentul incepe de pe: " . $begin_date . "</td>";
                         }
                             else{
-                                echo "<td style = 'color: green'> Valabil</td>";
+                                echo "<td style = 'color:green'> Valabil</td>";
                             }
                         echo "</tr>";
                     }
