@@ -19,7 +19,18 @@ if($_SESSION['logged_in']){
     </head>
     <body>
     <script src = "JS/menuAfterLogin.js"></script>
-    <script src="JS/stbAbonament.js"></script>>
+    <script src="JS/stbAbonament.js"></script>
+
+    <?php
+        $user_id = 'user_id';
+        $query = "SELECT abon_id, expiration_date, begin_date FROM abonament WHERE user_id = $_SESSION[$user_id] AND tip_id = 1 ";
+        $result = mysqli_query($db, $query);
+        $nn = mysqli_fetch_assoc($result);
+        $expiration_date = $nn['expiration_date'];
+        $begin_date = $nn['begin_date'];
+        if(mysqli_num_rows($result) == 0) {
+    ?>
+
     <div class="container bg-light" id="contain" style="height:100%;">
         <h2 style="margin-top:7%; margin-bottom:3%">Creeaza-ti propriul abonament la STB </h2>
 
@@ -58,10 +69,46 @@ if($_SESSION['logged_in']){
 
 
         </div>
-
-
-
     </div>
+    <?php }
+        else
+            {
+                if($expiration_date < date("Y-m-d")) {
+                    ?>
+                    <div class="container bg-light" id="contain" style="height:100%;">
+                    <center><h2><?php echo $_SESSION['first_name']?> abonamentul tau este expirat!</h2></center>
+                    <center><a href = 'stb_abonament_reinoire.php'><input value='Reinoire' type='button' class='btn btn-primary'></a></center>
+                    </div>
+                    <?php
+                }
+                else if($begin_date > date("Y-m-d")){
+                    ?>
+                    <div class="container bg-light mt-0" id="contain" style="height:100%;">
+                        <div >
+                            <br>
+                            <hr>
+                            <center><h2><?php echo $_SESSION['first_name']?> abonamentul tau va fii activ de la data: <?php echo $begin_date ?></h2></center>
+                            <center><h2> Calatorie placuta!</h2></center>
+                            <hr>
+                        </div>
+                    </div>
+                    <?php
+                }
+                else {
+                    ?>
+                    <div class="container bg-light mt-0" id="contain" style="height:100%;">
+                        <div >
+                            <br>
+                            <hr>
+                            <center><h2><?php echo $_SESSION['first_name']?> nu te obosi, deja un abonament facut.</h2></center>
+                            <center><h2> Calatorie placuta!</h2></center>
+                            <hr>
+                        </div>
+                    </div>
+                    <?php
+                }
+            }
+        ?>
 
     <?php
     if($_SESSION['logged_in']){
