@@ -1,4 +1,4 @@
-<?php include ('server.php');
+<?php include('server.php');
 if($_SESSION['logged_in']){
 ?>
 
@@ -21,7 +21,7 @@ if($_SESSION['logged_in']){
                 <div class="col-md-6" style="background-color:lavender;top:20px" >
                     <!--<img src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width: 100%">
                     <h2 style="text-align: center">Cumpara abonament</h2> -->
-                        <img class="img-rounded img-responsive"  src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width:70%; margin: auto; display:block">
+                        <img class="img-rounded img-responsive" src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width:70%; margin: auto; display:block">
                         <div>
                             <p>
                                 <a href="stb-buy.php" class="btn btn-lg btn-primary" style="margin: auto; display:table">Cumpara abonament/calatorii</a>
@@ -31,10 +31,10 @@ if($_SESSION['logged_in']){
                 <div class="col-md-6 col-md-offset-4"  style="background-color:lavender; left:5%;top:20px">
                     <div class="hovereffect">
                          <!--<h2 style="text-align: center">Trasee disponibile </h2>-->
-                        <img class="img-rounded img-responsive"  src="Imagini/stb-route.png" class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
+                        <img class="img-rounded img-responsive" src="Imagini/stb-route.png" class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
                         <div class="overlay">
                             <p>
-                                <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table">Planificator calatorii</a>
+                                <a href="routePlanner.php" class="btn btn-lg btn-primary" style="margin: auto; display:table">Planificator calatorii</a>
                             </p>
                         </div>
                     </div>
@@ -42,7 +42,7 @@ if($_SESSION['logged_in']){
             </div>
             <div class = "row">
                 <div class="col-md-6 col-md-offset-8" style="background-color:lavender;left:30%;top:30px">
-                    <img class="img-rounded img-responsive"  src="Imagini/stb-history.png" class="img-rounded img-responsive" alt="History " style="width:44%; margin: auto; display:block">
+                    <img class="img-rounded img-responsive" src="Imagini/stb-history.png" class="img-rounded img-responsive" alt="History " style="width:44%; margin: auto; display:block">
                     <div>
                         <p>
                             <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table">Istoric calatorii</a>

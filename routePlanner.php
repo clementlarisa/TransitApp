@@ -48,12 +48,12 @@ if($_SESSION['logged_in']){
                             <i class="fa fa-credit-card  fa-5x fa-icon-image"></i>
                             <p class="item-title">
                                 <!-- <a href="stb-abonament.php" role="button" class="btn btn-outline-info"> Abonament</a>-->
-                            <h3>Abonament</h3>
+                            <h3>Lista linii STB</h3>
                             </p><!-- /.item-title -->
                             <p>
                                 Fiecare abonament dispunde de un id unic si expira la 30 de zile de la activarea acestuia. Cu ajutorul chitantei trimise pe mail puteti opta pentru decontarea acestuia si obtinerea celor 25 lei.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="stb-abonament.php">Creeaza abonament </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="linesSTB.php">Vezi liniile stb </a>
                         </div>
                     </div>
                 </div>
@@ -62,12 +62,12 @@ if($_SESSION['logged_in']){
                         <div class="text">
                             <i class="fa fa-bus fa-5x fa-icon-image" ></i>
                             <p class="item-title">
-                            <h3> Calatorie</h3>
+                            <h3> Planificator</h3>
                             </p><!-- /.item-title -->
                             <p>
                                 Fiecare calatorie dispune de un cod unic pe care va trebui sa il prezentati la orice control din mijlocul de transport in comun, la cererea personaelor autorizate. O calatorie costa 1,30 lei.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="stb-calatorie.php">Cumpara calatorie </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="plannerSTB.php">Planifica-ti calatoria</a>
                         </div>
                     </div>
                 </div>

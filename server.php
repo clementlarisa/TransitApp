@@ -301,3 +301,18 @@ if (isset($_POST['reinoire'])) {
 }
 
 
+if (isset($_POST['chooseLine']))
+{
+    $lineNumber = mysqli_real_escape_string($db, $_POST['lineNumber']);
+   // $user_id = 'user_id';
+    //if(count($errors)==0){
+    $query = "SELECT linie_id FROM linie 
+              WHERE denumire_linie = $lineNumber;
+            ";
+   // print $_SESSION[$user_id];
+    print $query;
+    $val=mysqli_query($db, $query);
+    print $val;
+    header('location:linesSTB.php');
+
+}
