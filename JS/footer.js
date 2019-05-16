@@ -18,7 +18,7 @@ document.write("<footer class=\"footer-distributed\">\n" +
     "\t\t\t\t\t·\n" +
     "\t\t\t\t\t<a href=\"#\">Metrorex</a>\n" +
     "\t\t\t\t\t·\n" +
-    "\t\t\t\t\t<a href=\"#\">CFR</a>\n" +
+    "\t\t\t\t\t<a href=\"cfr.php\">CFR</a>\n" +
     "\t\t\t\t\t·\n" +
     "\t\t\t\t\t<a href=\"my_account.php\">My Account</a>\n" +
     "\t\t\t\t\t·\n" +
