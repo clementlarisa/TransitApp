@@ -18,36 +18,33 @@ if($_SESSION['logged_in']){
     <?php } else { ?>
         <script src = "JS/menu.js"></script>
     <?php } ?>
-    <div class="container bg-light" style="height:100%;">
+    <div class="container mb-5" style="height:100%;background-color: #0E0E0E;">
         <div class="row">
-            <div class="col-md-6" style="background-color:lavender;top:20px" >
-                <!--<img src="Imagini/ab-stb.jpg" class="img-rounded img-responsive" alt="Abonament STB" style="width: 100%">
-                <h2 style="text-align: center">Cumpara abonament</h2> -->
-                <img class="img-rounded img-responsive"  src="Imagini/bilete-tren.jpg" class="img-rounded img-responsive" alt="Bilete Tren" style="width:70%; margin: auto; display:block">
+            <div class="col-md-6" style="background-color:#0E0E0E;top:0" >
+                <img class="img-rounded img-responsive" src="Imagini/cfr-bilete.png" class="img-rounded img-responsive" alt="Bilete Tren" style="width:70%; margin: auto; display:block">
                 <div>
                     <p>
-                        <a href="rezerva-cfr.php" class="btn btn-lg btn-primary" style="margin: auto; display:table">Rezerva bilet</a>
+                        <a href="cfr-rezervare.php" class="btn btn-lg btn-primary" style="margin: auto; display:table; background-color: #292C2F;">Rezerva bilet</a>
                     </p>
                 </div>
             </div>
-            <div class="col-md-6 col-md-offset-4"  style="background-color:lavender; left:5%;top:20px">
+            <div class="col-md-6 col-md-offset-4"  style="background-color:#0E0E0E;top:0">
                 <div class="hovereffect">
-                    <!--<h2 style="text-align: center">Trasee disponibile </h2>-->
-                    <img class="img-rounded img-responsive"  src="Imagini/stb-route.png" class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
+                    <img class="img-rounded img-responsive"  src="Imagini/cfr-route.png" class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
                     <div class="overlay">
                         <p>
-                            <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table">Planificator calatorii</a>
+                            <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table; background-color: #292C2F;">Planificator calatorii</a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
         <div class = "row">
-            <div class="col-md-6 col-md-offset-8" style="background-color:lavender;left:30%;top:30px">
-                <img class="img-rounded img-responsive"  src="Imagini/stb-history.png" class="img-rounded img-responsive" alt="History " style="width:44%; margin: auto; display:block">
+            <div class="col-md-6 col-md-offset-8" style="background-color:#0E0E0E;left:30%;top:0">
+                <img class="img-rounded img-responsive"  src="Imagini/cfr-istoric.png" class="img-rounded img-responsive" alt="History " style="width:44%; margin: auto; display:block">
                 <div>
                     <p>
-                        <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table">Istoric calatorii</a>
+                        <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table; background-color: #292C2F;">Istoric calatorii</a>
                     </p>
                 </div>
 
