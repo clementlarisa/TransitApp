@@ -44,7 +44,7 @@ if($_SESSION['logged_in']){
                 <img class="img-rounded img-responsive"  src="Imagini/cfr-istoric.png" class="img-rounded img-responsive" alt="History " style="width:44%; margin: auto; display:block">
                 <div>
                     <p>
-                        <a href="#" class="btn btn-lg btn-primary" style="margin: auto; display:table; background-color: #292C2F;">Istoric calatorii</a>
+                        <a href="my_account_history.php" class="btn btn-lg btn-primary" style="margin: auto; display:table; background-color: #292C2F;">Istoric calatorii</a>
                     </p>
                 </div>
 
