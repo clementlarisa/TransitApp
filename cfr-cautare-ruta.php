@@ -24,6 +24,30 @@ if ($_SESSION['logged_in']) {
         <script src="JS/menu.js"></script>
     <?php } ?>
     <div class="container bg-dark" style="height:100%;">
+        <table>
+            <tr>
+                <th>Numarul Linie</th>
+                <th>Numele statiei</th>
+                <th>Ora de plecare</th>
+            </tr>
+        </table>
+        <?php
+        $db = mysqli_connect('localhost', 'root', '', 'transport');
+        //cautare statie cfr
+        $plecare = $_POST['cfr-cauta-plecare'];
+        $destinatie = $_POST['cfr-cauta-destinatie'];
+        if (isset($plecare)){
+            $linie = "SELECT linie_id FROM transport.statie WHERE denumire_statie = '$plecare'";
+            $show = "SELECT * FROM transport.statie WHERE linie_id = '$linie' AND denumire_statie = '$destinatie'";
+            $result = mysqli_query($db, $show);
+            while($rows = mysli_fetch_array($result)){
+                echo $rows['linie_id'];
+                echo $rows['denumire_statie'];
+                echo $rows['ora_plecare'];
+                echo "<br/>";
+            }
+        }
+        ?>
     </div>
     <?php
     if ($_SESSION['logged_in']) {

@@ -9,6 +9,7 @@ if ($_SESSION['logged_in']) {
         <link rel="stylesheet" href="CSS/footer.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+
               crossorigin="anonymous">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -25,8 +26,9 @@ if ($_SESSION['logged_in']) {
     <?php } ?>
     <div class="container bg-dark" style="height:100%;">
         <br/>
-        <form action="cfr-cauta-ruta.php" method="post" class="form-inline justify-content-center">
-            <input class="form-control mr-sm-2" type="search" placeholder="Introdu Destinatie" aria-label="Search" name="search">
+        <form action="cfr-cautare-ruta.php" method="post" class="form-inline justify-content-center">
+            <input class="form-control mr-sm-2" type="search" placeholder="Statie de Plecare" aria-label="Search" name="cfr-cauta-plecare">
+            <input class="form-control mr-sm-2" type="search" placeholder="Statie de Sosire" aria-label="Search" name="cfr-cauta-destinatie">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cauta</button>
         </form>
         <br/>
