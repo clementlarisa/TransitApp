@@ -24,27 +24,51 @@ if ($_SESSION['logged_in']) {
         <script src="JS/menu.js"></script>
     <?php } ?>
     <div class="container bg-dark" style="height:100%;">
-        <table>
+        <table class="table table-dark table-striped table-hover">
             <tr>
-                <th>Numarul Linie</th>
-                <th>Numele statiei</th>
-                <th>Ora de plecare</th>
+                <th>Numarul Liniei</th>
+                <th>Statia de Plecare</th>
+                <th>Ora de Plecare</th>
+                <th>Statia de Sosire</th>
+                <th>Ora de Sosire</th>
             </tr>
-        </table>
+<!--        </table>-->
         <?php
         $db = mysqli_connect('localhost', 'root', '', 'transport');
         //cautare statie cfr
         $plecare = $_POST['cfr-cauta-plecare'];
-        $destinatie = $_POST['cfr-cauta-destinatie'];
-        if (isset($plecare)){
-            $linie = "SELECT linie_id FROM transport.statie WHERE denumire_statie = '$plecare'";
-            $show = "SELECT * FROM transport.statie WHERE linie_id = '$linie' AND denumire_statie = '$destinatie'";
+        $sosire = $_POST['cfr-cauta-destinatie'];
+        if (isset($plecare)) {
+//            $linie = "SELECT linie_id FROM transport.statie WHERE denumire_statie = '$plecare'";
+//            $show = "SELECT * FROM transport.statie WHERE linie_id = '$linie' AND denumire_statie = '$destinatie'";
+            $show = "SELECT P.linie_id AS linie_id, P.ora_plecare AS ora_plecare, S.ora_sosire AS ora_sosire,
+                            P.denumire_statie AS statie_plecare, S.denumire_statie AS statie_sosire
+FROM transport.statie P 
+INNER JOIN transport.statie S 
+ON P.linie_id = S.linie_id
+WHERE p.denumire_statie ='$plecare' 
+AND S.denumire_statie = '$sosire'
+";
             $result = mysqli_query($db, $show);
-            while($rows = mysli_fetch_array($result)){
+            while ($rows = mysqli_fetch_array($result)) {
+                echo "<tr class=''>";
+                echo "<td>";
                 echo $rows['linie_id'];
-                echo $rows['denumire_statie'];
+                echo "</td>";
+                echo "<td>";
+                echo $rows['statie_plecare'];
+                echo "</td>";
+                echo "<td>";
                 echo $rows['ora_plecare'];
+                echo "</td>";
+                echo "<td>";
+                echo $rows['statie_sosire'];
+                echo "</td>";
+                echo "<td>";
+                echo $rows['ora_sosire'];
+                echo "</td>";
                 echo "<br/>";
+                echo "</table>";
             }
         }
         ?>
