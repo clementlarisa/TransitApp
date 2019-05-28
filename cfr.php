@@ -20,15 +20,15 @@ if ($_SESSION['logged_in']) {
     <?php } else { ?>
         <script src="JS/menu.js"></script>
     <?php } ?>
-    <div class="container mb-5" style="height:100%;background-color: #0E0E0E;">
+    <div class="container mb-5" style="height:100vh;background-color: #0E0E0E;">
         <div class="row">
             <div class="col-md-6" style="background-color:#0E0E0E;top:0">
                 <img class="img-rounded img-responsive" src="Imagini/cfr-bilete.png" class="img-rounded img-responsive"
                      alt="Bilete Tren" style="width:70%; margin: auto; display:block">
                 <div>
                     <p>
-                        <a href="cfr-rezervare.php" class="btn btn-lg btn-primary"
-                           style="margin: auto; display:table; background-color: #292C2F;">Rezerva bilet</a>
+                        <a href="cfr-rezervare.php" class="btn  btn-outline-success my-2 my-sm-0"
+                           style="margin: auto; display:table;">Cauta Bilet</a>
                     </p>
                 </div>
             </div>
@@ -38,9 +38,8 @@ if ($_SESSION['logged_in']) {
                          class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
                     <div class="overlay">
                         <p>
-                            <a href="#" class="btn btn-lg btn-primary"
-                               style="margin: auto; display:table; background-color: #292C2F;">Planificator
-                                calatorii</a>
+                            <a href="cfr-mersul-trenurilor.php" class="btn  btn-outline-success my-2 my-sm-0"
+                               style="margin: auto; display:table;">Mersul Trenurilor</a>
                         </p>
                     </div>
                 </div>
@@ -52,8 +51,8 @@ if ($_SESSION['logged_in']) {
                      alt="History " style="width:44%; margin: auto; display:block">
                 <div>
                     <p>
-                        <a href="my_account_history.php" class="btn btn-lg btn-primary"
-                           style="margin: auto; display:table; background-color: #292C2F;">Istoric calatorii</a>
+                        <a href="my_account_history.php" class="btn  btn-outline-success my-2 my-sm-0"
+                           style="margin: auto; display:table;">Istoric Calatorii</a>
                     </p>
                 </div>
 
