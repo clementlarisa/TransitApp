@@ -1,4 +1,6 @@
-<?php include('server.php');
+<?php
+include_once('server.php');
+include_once('controller-cfr-mersul-trenurilor.php');
 if ($_SESSION['logged_in']) {
     ?>
 
