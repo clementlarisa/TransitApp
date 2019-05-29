@@ -30,36 +30,28 @@ if($_SESSION['logged_in']){
                 <script src ="JS/myAccountVertMenu.js"></script>
             </div>
             <div class="col-sm mt-5">
-                <center><h2 class="mx-auto">Istoric intinerari</h2></center>
-               <?php
-                    $user_id = "user_id";
-                    $query = "SELECT linie_id FROM statie s JOIN isoric i ON (s.statie_id=i.statie_id) WHERE user_id = '$_SESSION[$user_id]'";
-                    $results = mysqli_query($db, $query);
-                    $nns = [];
-                    $nns2 = [];
-			        while($nn = mysqli_fetch_assoc($results))
-                    {
-                        $nns[] = $nn;
+                <center><h2 class="mx-auto">Bilete Mele</h2></center>
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th>Cod Bilet</th>
+                        <th>Denumire Statie</th>
+                        <th>Adresa</th>
+                    </tr>
+                    <?php
+                    $db = mysqli_connect('localhost', 'root', '', 'transport');
+                    //afisare rute
+                    $sql = "SELECT s.linie_id as linie_id, s.denumire_statie as denumire_statie, s.adresa as adresa FROM transport.statie s WHERE s.linie_id IN (8,9,10)";
+                    $result = $db->query($sql);
+                    while ($rows = mysqli_fetch_array($result)) {
+                        //if ('linie_id' >= 8 and 'linie_id' <= 10) {
+                        echo "<tr class=''>";
+                        echo "<td>" . $rows['linie_id'] . "</td>";
+                        echo "<td>" . $rows['denumire_statie'] . "</td>";
+                        echo "<td>" . $rows['adresa'] . "</td>";
+                        //}
                     }
-			        echo "<table class = 'history'>";
-                    echo "<tr>" . "\n" . "<th>Numar</th>" . "<th>Denumire linie</th>";
-			        for($i = 0; $i<count($nns); $i += 1){
-			            echo "<tr>";
-                        echo "<td>" . ($i+1) . "</td>";
-                        $id_linie = $nns[$i]['id_linie'];
-                        $query ="SELECT denumire_linie FROM linie WHERE linie_id = '$id_linie'";
-                        $results2 = mysqli_query($db, $query);
-                        while($nn2 = mysqli_fetch_assoc($results2)){
-                            $nns2[] = $nn2;
-                        }
-                        for ($j=0;$j<count($nns2);$j+=1)
-                        {
-                            echo "<td>" . $nns2[$j]['denumire_linie'] . "</td>";
-                        }
-                        echo "</tr>";
-                    }
-			        echo "</table>";
-               ?>
+                    ?>
+                </table>
             </div>
         </div>
     </div>
