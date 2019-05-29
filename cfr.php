@@ -23,7 +23,8 @@ if ($_SESSION['logged_in']) {
     <div class="container mb-5" style="height:100vh;background-color: #0E0E0E;">
         <div class="row">
             <div class="col-md-6" style="background-color:#0E0E0E;top:0">
-                <img class="img-rounded img-responsive" src="Imagini/cfr-bilete.png" class="img-rounded img-responsive"
+                <img class="img-rounded img-responsive" src="Imagini/cfr-bilete.png"
+                     class="img-rounded img-responsive"
                      alt="Bilete Tren" style="width:70%; margin: auto; display:block">
                 <div>
                     <p>

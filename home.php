@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<?php include ('server.php'); ?>
+<?php include('server.php'); ?>
 <html>
 <head>
     <title>Home</title>

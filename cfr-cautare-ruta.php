@@ -44,7 +44,7 @@ if ($_SESSION['logged_in']) {
                 $result = get_routes($plecare, $sosire);
                 while ($rows = mysqli_fetch_array($result)) {
                     echo "<tr class=''>";
-                    echo " <form action=\"cfr-config-bilet.php\" method=\"post\" class=\"form-inline justify-content-center\">";
+                    echo "<form action='cfr-config-bilet.php' method='post' class='form-inline-justify-content-center'>";
                     echo "<td><input type = 'hidden' readonly name = 'linie_id' value = " . $rows['linie_id'] . ">" . $rows['linie_id'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'statie_plecare' value = " . $rows['statie_plecare'] . ">" . $rows['statie_plecare'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'ora_plecare' value = " . $rows['ora_plecare'] . ">" . $rows['ora_plecare'] . "</td>";
