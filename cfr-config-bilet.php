@@ -60,8 +60,8 @@ if ($_SESSION['logged_in']) {
             echo "<td>" . $statie_sosire . "</td>";
             echo "<td>" . $ora_sosire . "</td>";
             echo "<br/>";
-            $sql = "INSERT INTO transport.bilete (bilet_id, user_id, linie_id)
-                    VALUES ('$cod',1, '$linie_id');";
+            $sql = "INSERT INTO transport.bilete (bilet_id, clasa, vagon, loc, user_id, linie_id, statie_plecare, ora_plecare, statie_sosire, ora_sosire)
+                    VALUES ('$cod','$clasa','$vagon', '$loc', 1, '$linie_id', '$statie_plecare','$ora_plecare','$statie_sosire','$ora_sosire');";
 
             if ($db->query($sql) === TRUE) {
                 echo "<div class=\"alert alert-success\" role=\"alert\">
