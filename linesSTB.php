@@ -108,6 +108,7 @@ if($_SESSION['logged_in']){
            });
        }
     </script>
+    <!--
     <div class="container bg-light" style="height:100%">
         <div class="row">
 
@@ -128,12 +129,48 @@ if($_SESSION['logged_in']){
                     </div>
                 </form>
 
-            </div>
-
+            </div>-->
+<!--
             <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab item" style="left:27%">
                 <div id="myMap" style="position:relative;width:100%;min-width:290px;height:500px;"> </div>
-            </div>
-        </div>
+            </div>-->
+       <!-- </div>
+    </div>-->
+
+
+    <div class="container bg-light" style="height:100vh;">
+        <table class="table table-light table-striped table-hover">
+            <tr>
+                <th>Numarul Liniei</th>
+                <th>Linie </th>
+                <th>Statie plecare</th>
+                <th>Statie sosire</th>
+            </tr>
+            <?php
+            $db = mysqli_connect('localhost', 'root', '', 'transport');
+
+
+                $show = "SELECT s.linie_id AS linie_id, s.denumire_linie AS denumire_linie, s.plecare AS plecare, s.destinatie as sosire
+                            FROM transport.linie s 
+                         WHERE s.linie_id BETWEEN 1 and 4
+                         ";
+               /* $result = mysqli_query($db, $show);*/
+               $result=$db->query($show);
+                while ($rows = mysqli_fetch_array($result)) {
+                    echo "<tr class=''>";
+                    echo " <form action=\"cfr-config-bilet.php\" method=\"post\" class=\"form-inline justify-content-center\">";
+                    echo "<td><input type = 'hidden' name = 'linie_id' value = " . $rows['linie_id'] . ">" . $rows['linie_id'] . "</td>";
+                    echo "<td><input type = 'hidden' name = 'denumire_linie' value = " . $rows['denumire_linie'] . ">" . $rows['denumire_linie'] . "</td>";
+                    echo "<td><input type = 'hidden' readonly name = 'plecare' value = " . $rows['plecare'] . ">" . $rows['plecare'] . "</td>";
+                    echo "<td><input type = 'hidden' readonly name = 'sosire' value = " . $rows['sosire'] . ">" . $rows['sosire'] . "</td>";
+                    echo "<td>";
+                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0 btn-block\" type=\"submit\">Vezi statii</button>";
+                    echo "</td>";
+                    echo "</form>";
+                }
+
+            ?>
+        </table>
     </div>
     <?php
     if($_SESSION['logged_in']){
