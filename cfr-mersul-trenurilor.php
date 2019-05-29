@@ -47,6 +47,7 @@ if ($_SESSION['logged_in']) {
             ?>
         </table>
     </div>
+    </body>
     <?php
     if ($_SESSION['logged_in']) {
         ?>
@@ -54,7 +55,7 @@ if ($_SESSION['logged_in']) {
     <?php } else { ?>
         <script src="JS/footerBeforeLogin.js"></script>
     <?php } ?>
-    </body>
+
     </html>
 <?php } else {
     header('location:login.php');
