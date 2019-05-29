@@ -30,7 +30,7 @@ if($_SESSION['logged_in']){
                 <script src ="JS/myAccountVertMenu.js"></script>
             </div>
             <div class="col-sm mt-5">
-                <center><h2 class="mx-auto">Istoric intinerari</h2></center>
+                <center><h2 class="mx-auto">Istoric itinerarii</h2></center>
                 <?php
                 $user_id = "user_id";
                 $query = "SELECT linie_id FROM statie s JOIN isoric i ON (s.statie_id=i.statie_id) WHERE user_id = '$_SESSION[$user_id]'";

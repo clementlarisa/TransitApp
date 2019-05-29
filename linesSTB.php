@@ -145,6 +145,7 @@ if($_SESSION['logged_in']){
                 <th>Linie </th>
                 <th>Statie plecare</th>
                 <th>Statie sosire</th>
+                <th>Optiune</th>
             </tr>
             <?php
             $db = mysqli_connect('localhost', 'root', '', 'transport');
@@ -158,13 +159,13 @@ if($_SESSION['logged_in']){
                $result=$db->query($show);
                 while ($rows = mysqli_fetch_array($result)) {
                     echo "<tr class=''>";
-                    echo " <form action=\"cfr-config-bilet.php\" method=\"post\" class=\"form-inline justify-content-center\">";
+                    echo " <form action=\"statii-STB.php\" method=\"post\" class=\"form-inline justify-content-center\">";
                     echo "<td><input type = 'hidden' name = 'linie_id' value = " . $rows['linie_id'] . ">" . $rows['linie_id'] . "</td>";
                     echo "<td><input type = 'hidden' name = 'denumire_linie' value = " . $rows['denumire_linie'] . ">" . $rows['denumire_linie'] . "</td>";
-                    echo "<td><input type = 'hidden' readonly name = 'plecare' value = " . $rows['plecare'] . ">" . $rows['plecare'] . "</td>";
-                    echo "<td><input type = 'hidden' readonly name = 'sosire' value = " . $rows['sosire'] . ">" . $rows['sosire'] . "</td>";
+                    echo "<td><input type = 'hidden' name = 'plecare' value = " . $rows['plecare'] . ">" . $rows['plecare'] . "</td>";
+                    echo "<td><input type = 'hidden' name = 'sosire' value = " . $rows['sosire'] . ">" . $rows['sosire'] . "</td>";
                     echo "<td>";
-                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0 btn-block\" type=\"submit\">Vezi statii</button>";
+                    echo "<input type=\"submit\" name=\"cauta-linie\" value=\"Vezi linii\" class=\"btn btn-primary\" >";
                     echo "</td>";
                     echo "</form>";
                 }
