@@ -39,7 +39,6 @@ if ($_SESSION['logged_in']) {
                 <th></th>
             </tr>
             <?php
-            $db = mysqli_connect('localhost', 'root', '', 'transport');
             $cod = uniqid();
             $clasa = 2;
             $vagon = rand(1, 10);
@@ -50,6 +49,7 @@ if ($_SESSION['logged_in']) {
             $statie_sosire = $_POST['statie_sosire'];
             $ora_sosire = $_POST['ora_sosire'];
             $username = $_SESSION['user_id'];
+            $result = add_ticket($cod, $clasa, $vagon, $loc, $linie_id, $statie_plecare, $ora_plecare, $statie_sosire, $ora_sosire, $username);
             //afisare cod + clasa + vagon + loc
             echo "<tr class = ''><td>" . $cod . "</td>";
             echo "<td>" . $clasa . "</td>";
@@ -61,15 +61,13 @@ if ($_SESSION['logged_in']) {
             echo "<td>" . $statie_sosire . "</td>";
             echo "<td>" . $ora_sosire . "</td>";
             echo "<br/>";
-            $sql = "INSERT INTO transport.bilete (bilet_id, clasa, vagon, loc, user_id, linie_id, statie_plecare, ora_plecare, statie_sosire, ora_sosire)
-                    VALUES ('$cod','$clasa','$vagon', '$loc', '$username', '$linie_id', '$statie_plecare','$ora_plecare','$statie_sosire','$ora_sosire');";
 
-            if ($db->query($sql) === TRUE) {
+            if ($result === TRUE) {
                 echo "<div class=\"alert alert-success\" role=\"alert\">
                         Biletul a fost adaugat cu succes in profilul tau!</div>";
-            } else {
-                echo "<div class=\"alert alert-danger\" role=\"alert\">Eroare:" . $sql . $db->error . "</div>";
             }
+
+
             ?>
         </table>
     </div>

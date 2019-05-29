@@ -32,10 +32,7 @@ if ($_SESSION['logged_in']) {
                 <th>Adresa</th>
             </tr>
             <?php
-            $db = mysqli_connect('localhost', 'root', '', 'transport');
-            //afisare rute
-            $sql = "SELECT s.linie_id as linie_id, s.denumire_statie as denumire_statie, s.adresa as adresa FROM transport.statie s WHERE s.linie_id IN (8,9,10)";
-            $result = $db->query($sql);
+            $result = get_all_routes();
             while ($rows = mysqli_fetch_array($result)) {
                 //if ('linie_id' >= 8 and 'linie_id' <= 10) {
                     echo "<tr class=''>";
