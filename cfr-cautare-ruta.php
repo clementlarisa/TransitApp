@@ -1,4 +1,6 @@
-<?php include('server.php');
+<?php
+include_once('server.php');
+include_once('controller-cfr-cautare-ruta.php');
 if ($_SESSION['logged_in']) {
     ?>
 
@@ -39,15 +41,7 @@ if ($_SESSION['logged_in']) {
             $plecare = $_POST['cfr-cauta-plecare'];
             $sosire = $_POST['cfr-cauta-destinatie'];
             if (isset($plecare)) {
-                $show = "SELECT P.linie_id AS linie_id, P.ora_plecare AS ora_plecare, S.ora_sosire AS ora_sosire,
-                            P.denumire_statie AS statie_plecare, S.denumire_statie AS statie_sosire
-                            FROM transport.statie P 
-                            INNER JOIN transport.statie S 
-                            ON P.linie_id = S.linie_id
-                            WHERE p.denumire_statie ='$plecare' 
-                            AND S.denumire_statie = '$sosire'
-                         ";
-                $result = mysqli_query($db, $show);
+                $result = get_routes($plecare, $sosire);
                 while ($rows = mysqli_fetch_array($result)) {
                     echo "<tr class=''>";
                     echo " <form action=\"cfr-config-bilet.php\" method=\"post\" class=\"form-inline justify-content-center\">";
