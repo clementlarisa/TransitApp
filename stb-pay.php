@@ -125,7 +125,10 @@ if($_SESSION['logged_in']){
                         </li>
                     </ul>
                     <br/>
-                    <button class="btn btn-success btn-lg btn-block" role="button" onclick="plataSucces()">Pay</button>>
+                  <!--  <button class="btn btn-success btn-lg btn-block" role="button" onclick="plataSucces()">Pay</button>>-->
+                    <div class="form-group">
+                        <center><input type="submit" name="pay" value="Finalizeaza plata" class="btn btn-primary" ></center>
+                    </div>
                 </div>
             </div>
         </div>

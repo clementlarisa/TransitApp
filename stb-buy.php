@@ -51,9 +51,10 @@ if($_SESSION['logged_in']){
                             <h3>Abonament</h3>
                             </p><!-- /.item-title -->
                             <p>
-                                Fiecare abonament dispunde de un id unic si expira la 30 de zile de la activarea acestuia. Cu ajutorul chitantei trimise pe mail puteti opta pentru decontarea acestuia si obtinerea celor 25 lei.
+                                Fiecare abonament dispune de un id unic si expira la 30 de zile de la activarea acestuia. Cu ajutorul chitantei trimise pe mail puteti opta pentru decontarea acestuia si obtinerea celor 25 lei.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="stb-abonament.php">Creeaza abonament </a>
+                            <input type="submit" name="save" value="Creeaza abonament" class="btn btn-primary" ></center>
+                        </div>
                         </div>
                     </div>
                 </div>

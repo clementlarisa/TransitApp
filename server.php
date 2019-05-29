@@ -14,6 +14,8 @@ if(!isset($_SESSION))
 	$telephone = "";
 	$cnp = "";
 	$user_id="";
+	$expiration="";
+	$begin="";
 
 	$errors = array(); 
 	$_SESSION['success'] = "";
@@ -261,15 +263,22 @@ if(!isset($_SESSION))
 	}
 */
 
+if(isset($_POST['save']))
+{
+    $expiration = mysqli_real_escape_string($db, $_POST['expirationDate']);
+    $begin=mysqli_real_escape_string($db , $_POST['beginDate']);
+    header('location: stb-pay.php');
+}
+
 // Adaugare abonament
-if (isset($_POST['save'])) {
+if (isset($_POST['pay'])) {
+
     $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
     $begin_date = mysqli_real_escape_string($db , $_POST['beginDate']);
-    // $user_id=mysqli_real_escape_string($db,$_SESSION['user_id']);
     $user_id = 'user_id';
-    //if(count($errors)==0){
+
         $query = "INSERT INTO abonament (abon_id, user_id, tip_id,begin_date, expiration_date)
-                                       VALUES('' , $_SESSION[$user_id] , 1,STR_TO_DATE('$begin_date', '%m/%d/%Y') ,STR_TO_DATE('$expiration_date', '%m/%d/%Y')) ";
+                                       VALUES('' , $_SESSION[$user_id] , 1,STR_TO_DATE('$_SESSION[$begin], '%m/%d/%Y') ,STR_TO_DATE('$_SESSION[$expiration], '%m/%d/%Y')) ";
         print $_SESSION[$user_id];
         print $query;
         mysqli_query($db, $query);
@@ -277,8 +286,6 @@ if (isset($_POST['save'])) {
            // $_SESSION['success'] = "Ai introdus cu succes un abonament";
         header('location: stb.php');
     //}
-
-
 }
 
 if (isset($_POST['reinoire'])) {

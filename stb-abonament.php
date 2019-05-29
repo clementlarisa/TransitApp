@@ -57,14 +57,14 @@ if($_SESSION['logged_in']){
                     <input type="text" size="20" id="inputExpire"  class="form-control" name="expirationDate" >
                 </div>
                 <div class="form-group">
-                    <center><input type="submit" name="save" value="Creeaza abonament" class="btn btn-primary" ></center>
+                    <center><input type="submit" name="save" value="Continua la checkout" class="btn btn-primary" ></center>
                 </div>
             </form>
 
             <div class="col-md-6" style="left:10%" id="hiddenDiv" style="display:none">
-                <h5> Abonamentul cu id-ul <?php echo $_SESSION['user_id'] ;?> va fi creat imediat. Il vei putea vedea pe profilul tau dupa plata sumei de 25 de lei..</h5>
+                <h5> Abonamentul <!--cu id-ul <?php echo $_SESSION['user_id'] ;?> --> va fi creat imediat. Il vei putea vedea pe profilul tau dupa plata sumei de 25 de lei..</h5>
 
-                <a href="stb-pay.php" class="btn btn-lg btn-primary" > Continua la checkout</a>
+               <!-- <a href="stb-pay.php" class="btn btn-lg btn-primary" > Continua la checkout</a>-->
             </div>
 
 
