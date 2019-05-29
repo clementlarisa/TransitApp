@@ -60,7 +60,7 @@ if($_SESSION['logged_in']){
                             <p>
                                 Aici poti vedea cum ajungi la destinatia dorita si care este traseul cel mai bun. Alege cea mai apropiata statie de locul unde te afli si statia unde vrei sa ajungi, apoi se va afisa lista statiilor intermediare.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="metrorex-ruta.php">Alege ruta </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="metrorex-linii.php">Alege ruta </a>
                         </div>
                     </div>
                 </div>
