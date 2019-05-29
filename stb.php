@@ -60,7 +60,7 @@ if($_SESSION['logged_in']){
                             <p>
                                 Fiecare calatorie dispune de un cod unic pe care va trebui sa il prezentati la orice control din mijlocul de transport in comun, la cererea personaelor autorizate. O calatorie costa 1,30 lei.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="stb-calatorie.php">Linii disponibile </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="linesSTB.php">Linii disponibile </a>
                         </div>
                     </div>
                 </div>
