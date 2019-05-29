@@ -33,29 +33,29 @@ if($_SESSION['logged_in']){
                 <center><h2 class="mx-auto">Istoric intinerari</h2></center>
                <?php
                     $user_id = "user_id";
-                    $query = "SELECT linie_id FROM statie s JOIN isoric i ON (s.statie_id=i.statie_id) WHERE user_id = '$_SESSION[$user_id]'";
+                    $query = "SELECT statie_id FROM istoric WHERE user_id = '$_SESSION[$user_id]'";
                     $results = mysqli_query($db, $query);
                     $nns = [];
                     $nns2 = [];
+                    $k=0;
 			        while($nn = mysqli_fetch_assoc($results))
                     {
-                        $nns[] = $nn;
+                        $nns[$k] = $nn['statie_id'][$k];
+                        $k++;
+
                     }
 			        echo "<table class = 'history'>";
                     echo "<tr>" . "\n" . "<th>Numar</th>" . "<th>Denumire linie</th>";
 			        for($i = 0; $i<count($nns); $i += 1){
 			            echo "<tr>";
                         echo "<td>" . ($i+1) . "</td>";
-                        $id_linie = $nns[$i]['id_linie'];
-                        $query ="SELECT denumire_linie FROM linie WHERE linie_id = '$id_linie'";
+                        $id_linie = $nns[$i];
+                        $query ="SELECT denumire_linie,plecare,destinatie FROM linie i join statie s ON (i.linie_id = s.linie_id) WHERE s.statie_id = '$id_linie'";
                         $results2 = mysqli_query($db, $query);
-                        while($nn2 = mysqli_fetch_assoc($results2)){
-                            $nns2[] = $nn2;
-                        }
-                        for ($j=0;$j<count($nns2);$j+=1)
-                        {
-                            echo "<td>" . $nns2[$j]['denumire_linie'] . "</td>";
-                        }
+                        $linie = mysqli_fetch_assoc($results2);
+
+                        echo "<td>" . $linie['denumire_linie']. "</td>";
+
                         echo "</tr>";
                     }
 			        echo "</table>";
