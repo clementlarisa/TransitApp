@@ -69,12 +69,12 @@ if($_SESSION['logged_in']){
                         <div class="text">
                             <i class="fa fa-history fa-5x fa-icon-image" ></i>
                             <p class="item-title">
-                            <h3> Istoric de calatori</h3>
+                            <h3> Istoric de calatorii</h3>
                             </p><!-- /.item-title -->
                             <p>
-                                Fiecare calatorie dispune de un cod unic pe care va trebui sa il prezentati la orice control din mijlocul de transport in comun, la cererea personaelor autorizate. O calatorie costa 1,30 lei.
+                                Poti sa iti verifici istoricul calatoriilor intrand la My Account si Istoric itinerarii. Poti vedea toate abonamentele tale, data la care au fost create si data la care expira aici.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="metrorex-istoric.php">Calatoriile tale </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="my_account_history.php">Calatoriile tale </a>
                         </div>
                     </div>
                 </div>
