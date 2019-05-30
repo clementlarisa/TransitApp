@@ -16,7 +16,7 @@ include_once('server.php');
             <center><h2>Schimbare parola</h2></center>
             <hr/>
             <?php
-            if(isset($successMsg)){
+            if (isset($successMsg)) {
                 ?>
                 <div class="alert alert-success">
                     <span class="glyphicon glyphicon-info-sign"></span>
@@ -36,18 +36,14 @@ include_once('server.php');
             </div>
 
             <div class="form-group">
-                <center><input type="submit" name="change_password" value="Schimbare parola" class="btn btn-primary"></center>
+                <center><input type="submit" name="change_password" value="Schimbare parola" class="btn btn-primary">
+                </center>
             </div>
             <hr/>
             <a href="my_account_edit.php">Back</a>
         </form>
     </div>
 </div>
-
-
-
-
-
 
 
 </body>

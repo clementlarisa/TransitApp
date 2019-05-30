@@ -1,10 +1,12 @@
 <?php
 include_once('controller-cfr-cautare-ruta.php');
+
 use PHPUnit\Framework\TestCase;
 
 final class test_controller_cfr_cautare_ruta extends TestCase
 {
-    public function test_get_routes() {
+    public function test_get_routes()
+    {
         $plecare = "Bucuresti Nord";
         $sosire = "Iasi";
 

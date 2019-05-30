@@ -51,7 +51,7 @@ if ($_SESSION['logged_in']) {
                     echo "<td><input type = 'hidden' readonly name = 'statie_sosire' value = " . $rows['statie_sosire'] . ">" . $rows['statie_sosire'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'ora_sosire' value = " . $rows['ora_sosire'] . ">" . $rows['ora_sosire'] . "</td>";;
                     echo "<td>";
-                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0 btn-block\" type=\"submit\">Continua</button>";
+                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0 btn-block\" type=\"submit\">rezerva</button>";
                     echo "</td>";
                     echo "</form>";
                     echo "<br/>";

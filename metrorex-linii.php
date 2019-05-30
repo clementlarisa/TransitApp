@@ -1,5 +1,5 @@
 <?php include('server.php');
-if($_SESSION['logged_in']){
+if ($_SESSION['logged_in']) {
     ?>
 
     <!DOCTYPE html>
@@ -7,7 +7,9 @@ if($_SESSION['logged_in']){
     <head>
         <title>STB</title>
         <link rel="stylesheet" href="">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
 
         <!-- Load JQuery UI -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -16,22 +18,23 @@ if($_SESSION['logged_in']){
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
         <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
-        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css"
+              type="text/css"/>
         <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.js"></script>
     </head>
     <body>
     <?php
-    if($_SESSION['logged_in']){
+    if ($_SESSION['logged_in']) {
         ?>
-        <script src = "JS/menuAfterLogin.js"></script>
+        <script src="JS/menuAfterLogin.js"></script>
     <?php } else { ?>
-        <script src = "JS/menu.js"></script>
+        <script src="JS/menu.js"></script>
     <?php } ?>
 
     <div class="container bg-light" style="height:100vh;">
         <table class="table table-light table-striped table-hover">
             <tr>
-                <th>Linie </th>
+                <th>Linie</th>
                 <th>Statie plecare</th>
                 <th>Statie sosire</th>
                 <th>Optiune</th>
@@ -45,7 +48,7 @@ if($_SESSION['logged_in']){
                          WHERE s.linie_id BETWEEN 11 and 14
                          ";
             /* $result = mysqli_query($db, $show);*/
-            $result=$db->query($show);
+            $result = $db->query($show);
             while ($rows = mysqli_fetch_array($result)) {
                 echo "<tr class=''>";
                 echo " <form action=\"metrorex-statii.php\" method=\"post\" class=\"form-inline justify-content-center\">";
@@ -63,11 +66,11 @@ if($_SESSION['logged_in']){
         </table>
     </div>
     <?php
-    if($_SESSION['logged_in']){
+    if ($_SESSION['logged_in']) {
         ?>
-        <script src = "JS/footer.js"></script>
+        <script src="JS/footer.js"></script>
     <?php } else { ?>
-        <script src = "JS/footerBeforeLogin.js"></script>
+        <script src="JS/footerBeforeLogin.js"></script>
     <?php } ?>
     </body>
     </html>

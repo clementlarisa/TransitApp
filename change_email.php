@@ -16,7 +16,7 @@ include_once('server.php');
             <center><h2>Schimbare email</h2></center>
             <hr/>
             <?php
-            if(isset($successMsg)){
+            if (isset($successMsg)) {
                 ?>
                 <div class="alert alert-success">
                     <span class="glyphicon glyphicon-info-sign"></span>
@@ -27,8 +27,8 @@ include_once('server.php');
             ?>
 
             <div class="form-group">
-                <label >email:</label>
-                <input type="text" name="email" class="form-control" autocomplete="off" >
+                <label>email:</label>
+                <input type="text" name="email" class="form-control" autocomplete="off">
             </div>
 
             <div class="form-group">
@@ -39,11 +39,6 @@ include_once('server.php');
         </form>
     </div>
 </div>
-
-
-
-
-
 
 
 </body>

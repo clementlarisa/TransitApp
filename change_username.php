@@ -16,7 +16,7 @@ include_once('server.php');
             <center><h2>Schimbare username</h2></center>
             <hr/>
             <?php
-            if(isset($successMsg)){
+            if (isset($successMsg)) {
                 ?>
                 <div class="alert alert-success">
                     <span class="glyphicon glyphicon-info-sign"></span>
@@ -28,24 +28,20 @@ include_once('server.php');
 
 
             <div class="form-group">
-                <label >Username:</label>
-                <input type="text" name="username" class="form-control" autocomplete="off" >
+                <label>Username:</label>
+                <input type="text" name="username" class="form-control" autocomplete="off">
             </div>
 
 
             <div class="form-group">
-                <center><input type="submit" name="change_username" value="Schimbare username" class="btn btn-primary"></center>
+                <center><input type="submit" name="change_username" value="Schimbare username" class="btn btn-primary">
+                </center>
             </div>
             <hr/>
             <a href="my_account_edit.php">Back</a>
         </form>
     </div>
 </div>
-
-
-
-
-
 
 
 </body>

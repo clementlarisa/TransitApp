@@ -1,5 +1,5 @@
 <?php
-include ("server.php");
+include("server.php");
 ?>
 
 <html>
@@ -15,7 +15,7 @@ include ("server.php");
             <center><h2>Sunteti sigur ca doriti sa stergeti contul? Modificarile sunt permanente!</h2></center>
             <hr/>
             <?php
-            if(isset($successMsg)){
+            if (isset($successMsg)) {
                 ?>
                 <div class="alert alert-success">
                     <span class="glyphicon glyphicon-info-sign"></span>
@@ -30,7 +30,8 @@ include ("server.php");
                     <a href="my_account.php"><input type="button" class="form-control btn btn-primary" value="Nu"></a>
                 </div>
                 <div class="col">
-                    <input type = "submit" name="delete_user" value="Da" class=" form-control  btn btn-primary" style = "background-color: red">
+                    <input type="submit" name="delete_user" value="Da" class=" form-control  btn btn-primary"
+                           style="background-color: red">
                 </div>
             </div>
             <hr/>
