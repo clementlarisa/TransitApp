@@ -32,7 +32,7 @@ if ($_SESSION['logged_in']) {
     <?php } ?>
 
     <div class="container bg-light" style="height:100vh;">
-        <table class="table table-light table-striped table-hover">
+        <table class="table table-dark table-striped table-hover" style = "color: rgb(51, 133, 255)">
             <tr>
                 <th>Numar statie</th>
                 <th>Numar linie</th>
