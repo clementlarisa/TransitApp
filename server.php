@@ -308,18 +308,18 @@ if (isset($_POST['reinoire'])) {
 }
 
 
-if (isset($_POST['chooseLine']))
+if (isset($_POST['adauga-itinerarii']))
 {
-    $lineNumber = mysqli_real_escape_string($db, $_POST['lineNumber']);
+    $statie_id = mysqli_real_escape_string($db, $_POST['statie_id']);
+    $user_id=$_SESSION['user_id'];
+
    // $user_id = 'user_id';
     //if(count($errors)==0){
-    $query = "SELECT linie_id FROM linie 
-              WHERE denumire_linie = $lineNumber;
+    $query = "INSERT INTO istoric (istoric_id, user_id, statie_id)
+                                       VALUES('' , $user_id ,$statie_id) ;
             ";
-   // print $_SESSION[$user_id];
-    print $query;
-    $val=mysqli_query($db, $query);
-    print $val;
+    mysqli_query($db, $query);
     header('location:linesSTB.php');
 
 }
+

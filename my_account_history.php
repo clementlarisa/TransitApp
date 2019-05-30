@@ -33,7 +33,7 @@ if($_SESSION['logged_in']){
                 <center><h2 class="mx-auto">Istoric itinerarii</h2></center>
                 <?php
                 $user_id = "user_id";
-                $query = "SELECT linie_id FROM statie s JOIN isoric i ON (s.statie_id=i.statie_id) WHERE user_id = '$_SESSION[$user_id]'";
+                $query = "SELECT linie_id FROM statie s JOIN istoric i ON (s.statie_id=i.statie_id) WHERE user_id = '$_SESSION[$user_id]'";
                 $query = "SELECT statie_id FROM istoric WHERE user_id = '$_SESSION[$user_id]'";
                 $results = mysqli_query($db, $query);
                 $nns = [];
