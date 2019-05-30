@@ -61,7 +61,7 @@ if ($_SESSION['logged_in']) {
                         <input type="text" size="20" id="inputExpire" class="form-control" name="expirationDate">
                     </div>
                     <div class="form-group">
-                        <center><input type="submit" name="save" value="Continua la checkout" class="btn btn-primary">
+                        <center><input type="submit" name="save-metro" value="Continua la checkout" class="btn btn-primary">
                         </center>
                     </div>
                 </form>
