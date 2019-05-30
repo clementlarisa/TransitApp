@@ -90,7 +90,6 @@ if ($_SESSION['logged_in']) {
                 } else {
                     echo "<center><p>Nu aveti abonamente create!</p></center>";
                 }
-                print $_SESSION['beginDate'];
                 ?>
             </div>
         </div>

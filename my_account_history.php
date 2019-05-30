@@ -50,12 +50,14 @@ if ($_SESSION['logged_in']){
 
                 }
                 echo "<table class = 'history'>";
-                echo "<tr>" . "\n" . "<th>Numar</th>" . "<th>Denumire linie</th>";
-                for ($i = 0; $i < count($nns); $i += 1) {
+
+                echo "<tr>" . "\n" . "<th>Numar</th>" . "<th>Denumire linie</th>"."</tr>";
+                for($i = 0; $i<count($nns); $i += 1){
                     echo "<tr>";
-                    echo "<td>" . ($i + 1) . "</td>";
-                    $id_linie = $nns[$i]['id_linie'];
-                    $query = "SELECT denumire_linie FROM linie WHERE linie_id = '$id_linie'";
+                    echo "<td>" . ($i+1) . "</td>";
+                    $id_linie = $nns[$i];
+                    $query ="SELECT denumire_linie FROM linie WHERE linie_id = '$id_linie'";
+
                     $id_linie = $nns[$i];
                     $query = "SELECT denumire_linie,plecare,destinatie FROM linie i join statie s ON (i.linie_id = s.linie_id) WHERE s.statie_id = '$id_linie'";
                     $results2 = mysqli_query($db, $query);

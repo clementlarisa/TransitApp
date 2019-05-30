@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/footer.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,7 +11,7 @@
     <style>
         .title-image {
             position: absolute;
-            top: 25%;
+            top: 10%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -19,7 +20,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            font-size: larger;
+            font-size: medium;
             font-weight: bold;
             transform: translate(-50%, -50%);
         }
@@ -28,7 +29,21 @@
             color: black;
             font-style: italic;
         }
+        /*@media screen and (max-width: 1000px){
+            .text-image{
+                position: initial;
+                margin-top:50%;
+                font-size: medium;
+                font-weight: bold;
+            }
+            .title-image{
+                position: absolute;
+                top: 10%;
+                transform: translate(-50%, -50%);
+            }
 
+        }
+*/
     </style>
 </head>
 <body>
