@@ -1,4 +1,6 @@
-<?php include('server.php');
+<?php
+include_once('server.php');
+include_once('controller-stb-abonament.php');
 if ($_SESSION['logged_in']) {
     ?>
     <DOCTYPE html>
@@ -26,14 +28,13 @@ if ($_SESSION['logged_in']) {
 
     <?php
     $user_id = 'user_id';
-    $query = "SELECT abon_id, expiration_date, begin_date FROM abonament WHERE user_id = $_SESSION[$user_id] AND tip_id = 1 ";
-    $result = mysqli_query($db, $query);
+    $username = $_SESSION[$user_id];
+    $result = get_abonament($user_id, $username);
     $nn = mysqli_fetch_assoc($result);
     $expiration_date = $nn['expiration_date'];
     $begin_date = $nn['begin_date'];
     if (mysqli_num_rows($result) == 0) {
         ?>
-
         <div class="container bg-light" id="contain" style="height:100%;">
             <h2 style="margin-top:7%; margin-bottom:3%">Creeaza-ti propriul abonament la STB </h2>
 

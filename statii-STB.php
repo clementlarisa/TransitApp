@@ -1,4 +1,6 @@
-<?php include('server.php');
+<?php
+include_once('server.php');
+include_once('controller-stb-statii.php');
 if ($_SESSION['logged_in']) {
     ?>
 
@@ -153,13 +155,7 @@ if ($_SESSION['logged_in']) {
             if (isset($_POST['cauta-linie'])) {
 
                 $linie_id = mysqli_real_escape_string($db, $_POST['linie_id']);
-
-
-                $show = "SELECT P.statie_id as statie_id ,P.linie_id AS linie_id, P.denumire_statie AS denumire_statie, P.adresa AS adresa
-                            FROM transport.statie P 
-                            WHERE p.linie_id ='$linie_id' 
-                         ";
-                $result = mysqli_query($db, $show);
+                $result = get_statii($linie_id);
                 while ($rows = mysqli_fetch_array($result)) {
 
                     echo "<tr class=''>";
