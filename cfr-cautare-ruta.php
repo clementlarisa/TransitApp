@@ -44,14 +44,14 @@ if ($_SESSION['logged_in']) {
                 $result = get_routes($plecare, $sosire);
                 while ($rows = mysqli_fetch_array($result)) {
                     echo "<tr class=''>";
-                    echo " <form action=\"cfr-config-bilet.php\" method=\"post\" class=\"form-inline justify-content-center\">";
+                    echo "<form action='cfr-config-bilet.php' method='post' class='form-inline-justify-content-center'>";
                     echo "<td><input type = 'hidden' readonly name = 'linie_id' value = " . $rows['linie_id'] . ">" . $rows['linie_id'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'statie_plecare' value = " . $rows['statie_plecare'] . ">" . $rows['statie_plecare'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'ora_plecare' value = " . $rows['ora_plecare'] . ">" . $rows['ora_plecare'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'statie_sosire' value = " . $rows['statie_sosire'] . ">" . $rows['statie_sosire'] . "</td>";
                     echo "<td><input type = 'hidden' readonly name = 'ora_sosire' value = " . $rows['ora_sosire'] . ">" . $rows['ora_sosire'] . "</td>";;
                     echo "<td>";
-                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0 btn-block\" type=\"submit\">Continua</button>";
+                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0 btn-block\" type=\"submit\">rezerva</button>";
                     echo "</td>";
                     echo "</form>";
                     echo "<br/>";

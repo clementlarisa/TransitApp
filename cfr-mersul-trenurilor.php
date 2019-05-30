@@ -1,4 +1,6 @@
-<?php include('server.php');
+<?php
+include_once('server.php');
+include_once('controller-cfr-mersul-trenurilor.php');
 if ($_SESSION['logged_in']) {
     ?>
 
@@ -24,27 +26,24 @@ if ($_SESSION['logged_in']) {
     <?php } else { ?>
         <script src="JS/menu.js"></script>
     <?php } ?>
-    <div class="container bg-dark" style="height:100vh;">
-        <table class="table table-dark table-striped table-hover">
-            <tr>
-                <th>Numarul Liniei</th>
-                <th>Denumire Statie</th>
-                <th>Adresa</th>
-            </tr>
-            <?php
-            $result = get_all_routes();
-            while ($rows = mysqli_fetch_array($result)) {
-                //if ('linie_id' >= 8 and 'linie_id' <= 10) {
-                    echo "<tr class=''>";
-                    echo "<td>" . $rows['linie_id'] . "</td>";
-                    echo "<td>" . $rows['denumire_statie'] . "</td>";
-                    echo "<td>" . $rows['adresa'] . "</td>";
-                //}
-            }
-            ?>
-        </table>
-    </div>
-    </body>
+    <table class="table table-dark table-striped table-hover">
+        <tr>
+            <th>Numarul Liniei</th>
+            <th>Denumire Statie</th>
+            <th>Adresa</th>
+        </tr>
+        <?php
+        $result = get_all_routes();
+        while ($rows = mysqli_fetch_array($result)) {
+            //if ('linie_id' >= 8 and 'linie_id' <= 10) {
+            echo "<tr class=''>";
+            echo "<td>" . $rows['linie_id'] . "</td>";
+            echo "<td>" . $rows['denumire_statie'] . "</td>";
+            echo "<td>" . $rows['adresa'] . "</td>";
+            //}
+        }
+        ?>
+    </table>
     <?php
     if ($_SESSION['logged_in']) {
         ?>
@@ -52,7 +51,7 @@ if ($_SESSION['logged_in']) {
     <?php } else { ?>
         <script src="JS/footerBeforeLogin.js"></script>
     <?php } ?>
-
+    </body>
     </html>
 <?php } else {
     header('location:login.php');

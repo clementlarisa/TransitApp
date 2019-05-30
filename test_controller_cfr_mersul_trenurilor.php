@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 final class test_controller_cfr_mersul_trenurilor extends TestCase
 {
-    public function test_get_routes()
+    public function test_get_all_routes()
     {
         $result = get_all_routes();
         $this->assertTrue($result->num_rows > 0);
