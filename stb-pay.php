@@ -73,6 +73,7 @@ if($_SESSION['logged_in']){
                         </div>
                     </div>
                 </div>
+                <form method="post" autocomplete="off" action="stb-pay.php">
                 <div class="col-xs-12 col-md-4" id="cardPay" style="visibility: hidden;left:25%">
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -130,6 +131,7 @@ if($_SESSION['logged_in']){
                         <center><input type="submit" name="pay" value="Finalizeaza plata" class="btn btn-primary" ></center>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
 

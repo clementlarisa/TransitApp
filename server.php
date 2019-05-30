@@ -278,7 +278,7 @@ if (isset($_POST['pay'])) {
     $user_id = 'user_id';
 
         $query = "INSERT INTO abonament (abon_id, user_id, tip_id,begin_date, expiration_date)
-                                       VALUES('' , $_SESSION[$user_id] , 1,STR_TO_DATE('$_SESSION[$begin], '%m/%d/%Y') ,STR_TO_DATE('$_SESSION[$expiration], '%m/%d/%Y')) ";
+                                       VALUES('' , '$_SESSION[$user_id]' , 1,STR_TO_DATE('$_SESSION[$begin]', '%m-%d-%Y') ,STR_TO_DATE('$_SESSION[$expiration]', '%m-%d-%Y')) ";
         print $_SESSION[$user_id];
         print $query;
         mysqli_query($db, $query);

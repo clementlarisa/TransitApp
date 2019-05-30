@@ -6,6 +6,7 @@ if($_SESSION['logged_in']){
     <html>
     <head>
         <title>STB</title>
+        <link rel="stylesheet" href="CSS/footer.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="CSS/card.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -74,7 +75,7 @@ if($_SESSION['logged_in']){
                             <p>
                                Poti sa iti verifici istoricul abonamente intrand la My Account si Istoric itinerarii. Poti vedea toate abonamentele tale, data la care au fost create si data la care expira aici.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="my_account_abonament.php.php">Vezi istoric </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="my_account_abonament.php">Vezi istoric </a>
                         </div>
                     </div>
                 </div>
