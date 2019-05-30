@@ -267,18 +267,20 @@ if(isset($_POST['save']))
 {
     $expiration = mysqli_real_escape_string($db, $_POST['expirationDate']);
     $begin=mysqli_real_escape_string($db , $_POST['beginDate']);
+    $_SESSION['begin_date'] = $begin;
+    $_SESSION['expiration_date'] = $expiration;
     header('location: stb-pay.php');
 }
 
 // Adaugare abonament
 if (isset($_POST['pay'])) {
 
-    $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
-    $begin_date = mysqli_real_escape_string($db , $_POST['beginDate']);
+    $expiration_date = 'expiration_date';
+    $begin_date = 'begin_date';
     $user_id = 'user_id';
 
         $query = "INSERT INTO abonament (abon_id, user_id, tip_id,begin_date, expiration_date)
-                                       VALUES('' , '$_SESSION[$user_id]' , 1,STR_TO_DATE('$_SESSION[$begin]', '%m-%d-%Y') ,STR_TO_DATE('$_SESSION[$expiration]', '%m-%d-%Y')) ";
+                                       VALUES('' , '$_SESSION[$user_id]' , 1,STR_TO_DATE('$_SESSION[$begin_date]', '%m/%d/%Y') ,STR_TO_DATE('$_SESSION[$expiration_date]', '%m/%d/%Y')) ";
         print $_SESSION[$user_id];
         print $query;
         mysqli_query($db, $query);
@@ -321,5 +323,29 @@ if (isset($_POST['adauga-itinerarii']))
     mysqli_query($db, $query);
     header('location:linesSTB.php');
 
+}
+
+if (isset($_POST['pay-metrorex'])) {
+
+    $expiration_date = mysqli_real_escape_string($db, $_POST['expirationDate']);
+    $begin_date = mysqli_real_escape_string($db , $_POST['beginDate']);
+    $user_id = 'user_id';
+
+    $query = "INSERT INTO abonament (abon_id, user_id, tip_id,begin_date, expiration_date)
+                                       VALUES('' , '$_SESSION[$user_id]' , 2,STR_TO_DATE('$_SESSION[$begin]', '%m-%d-%Y') ,STR_TO_DATE('$_SESSION[$expiration]', '%m-%d-%Y')) ";
+    print $_SESSION[$user_id];
+    print $query;
+    mysqli_query($db, $query);
+
+    // $_SESSION['success'] = "Ai introdus cu succes un abonament";
+    header('location: metrorex.php');
+    //}
+}
+
+if(isset($_POST['save-metrorex']))
+{
+    $expiration = mysqli_real_escape_string($db, $_POST['expirationDate']);
+    $begin=mysqli_real_escape_string($db , $_POST['beginDate']);
+    header('location: metrorex-pay.php');
 }
 
