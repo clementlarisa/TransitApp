@@ -27,8 +27,10 @@ if ($_SESSION['logged_in']) {
     <div class="container bg-dark" style="height:100%;">
         <br/>
         <form action="cfr-cautare-ruta.php" method="post" class="form-inline justify-content-center">
-            <input class="form-control mr-sm-2" type="search" placeholder="Statie de Plecare" aria-label="Search" name="cfr-cauta-plecare">
-            <input class="form-control mr-sm-2" type="search" placeholder="Statie de Sosire" aria-label="Search" name="cfr-cauta-destinatie">
+            <input class="form-control mr-sm-2" type="search" placeholder="Statie de Plecare" aria-label="Search"
+                   name="cfr-cauta-plecare">
+            <input class="form-control mr-sm-2" type="search" placeholder="Statie de Sosire" aria-label="Search"
+                   name="cfr-cauta-destinatie">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cauta</button>
         </form>
         <br/>

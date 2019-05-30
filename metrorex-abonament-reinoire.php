@@ -25,7 +25,7 @@ if ($_SESSION['logged_in']) {
     <script src="JS/stbAbonament.js"></script>
     >
     <div class="container bg-light" id="contain" style="height:100%;">
-        <h2 style="margin-top:7%; margin-bottom:3%">Reinoieste-ti abonamentul STB </h2>
+        <h2 style="margin-top:7%; margin-bottom:3%">Reinoieste-ti abonamentul METROREX </h2>
 
         <?php
         if (isset($successMsg)) {
@@ -40,7 +40,7 @@ if ($_SESSION['logged_in']) {
 
         <div class="form-row" style="margin-top:30px">
 
-            <form method="post" action="stb-abonament.php">
+            <form method="post" action="metrorex-abonament.php">
                 <div class="form-group">
                     <label for="inputDate">Data de incepere a abonamentului </label>
                     <input type="text" size="20" id="inputDate" value='<?php echo date("Y-m-d"); ?>'
@@ -58,7 +58,7 @@ if ($_SESSION['logged_in']) {
 
             <div class="col-md-6" style="left:10%" id="hiddenDiv" style="display:none">
                 <h5> Abonamentul cu id-ul <?php echo $_SESSION['user_id']; ?> va fi creat imediat. Il vei putea vedea pe
-                    profilul tau dupa plata sumei de 25 de lei..</h5>
+                    profilul tau dupa plata sumei de 35 de lei..</h5>
 
                 <a href="stb-pay.php" class="btn btn-lg btn-primary"> Continua la checkout</a>
             </div>

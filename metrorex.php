@@ -26,6 +26,13 @@ if ($_SESSION['logged_in']) {
               id="bootstrap-css">
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+              integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
+              crossorigin='anonymous'>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
     <?php
@@ -36,42 +43,39 @@ if ($_SESSION['logged_in']) {
         <script src="JS/menu.js"></script>
     <?php } ?>
 
-    <div class="container" style="height:100%">
+    <div class="container bg-light" style="height:100%">
         <div class="row">
             <ul>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab  item" style="left:1%">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab  item" style="left:3%">
                     <div class="folded-corner service_tab_1">
                         <div class="text">
-                            <i class="fa fa-credit-card  fa-5x fa-icon-image"></i>
+                            <i class='fa fa-id-card-o fa-5x fa-icon-image'></i>
                             <p class="item-title">
-                                <!-- <a href="stb-abonament.php" role="button" class="btn btn-outline-info"> Abonament</a>-->
                             <h3>Abonament</h3>
                             </p><!-- /.item-title -->
                             <p>
                                 Fiecare abonament dispunde de un id unic si expira la 30 de zile de la activarea
                                 acestuia. Cu ajutorul chitantei trimise pe mail puteti opta pentru decontarea acestuia
-                                si obtinerea celor 25 lei.
+                                si obtinerea celor 35 lei.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="stb-abonament.php">Creeaza
+                            <a role="button" class="btn btn-primary btn-sm" href="metrorex-abonament.php">Creeaza
                                 abonament </a>
-                            <!--  <input type="submit" name="save" value="Creeaza abonament" class="btn btn-primary" ></center>-->
-
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab item" style="left:13%">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 Services-tab item" style="left:15%">
                     <div class="folded-corner service_tab_1">
                         <div class="text">
-                            <i class="fa fa-road fa-5x fa-icon-image"></i>
+                            <i class="fas fa-route fa-5x fa-icon-image"></i>
                             <p class="item-title">
-                            <h3> Linii</h3>
+                            <h3> Ruta</h3>
                             </p><!-- /.item-title -->
                             <p>
-                                Fiecare calatorie dispune de un cod unic pe care va trebui sa il prezentati la orice
-                                control din mijlocul de transport in comun, la cererea personaelor autorizate. O
-                                calatorie costa 1,30 lei.
+                                Aici poti vedea cum ajungi la destinatia dorita si care este traseul cel mai bun. Alege
+                                cea mai apropiata statie de locul unde te afli si statia unde vrei sa ajungi, apoi se va
+                                afisa lista statiilor intermediare.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="linesSTB.php">Linii disponibile </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="metrorex-linii.php">Alege ruta </a>
                         </div>
                     </div>
                 </div>
@@ -80,15 +84,15 @@ if ($_SESSION['logged_in']) {
                         <div class="text">
                             <i class="fa fa-history fa-5x fa-icon-image"></i>
                             <p class="item-title">
-                            <h3> Istoric</h3>
+                            <h3> Istoric de calatorii</h3>
                             </p><!-- /.item-title -->
                             <p>
-                                Poti sa iti verifici istoricul abonamente intrand la My Account si Istoric itinerarii.
+                                Poti sa iti verifici istoricul calatoriilor intrand la My Account si Istoric itinerarii.
                                 Poti vedea toate abonamentele tale, data la care au fost create si data la care expira
                                 aici.
                             </p>
-                            <a role="button" class="btn btn-primary btn-sm" href="my_account_abonament.php.php">Vezi
-                                istoric </a>
+                            <a role="button" class="btn btn-primary btn-sm" href="my_account_history.php">Calatoriile
+                                tale </a>
                         </div>
                     </div>
                 </div>

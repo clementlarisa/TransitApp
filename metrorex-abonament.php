@@ -1,6 +1,4 @@
-<?php
-include_once('server.php');
-include_once('controller-stb-abonament.php');
+<?php include('server.php');
 if ($_SESSION['logged_in']) {
     ?>
     <DOCTYPE html>
@@ -28,15 +26,16 @@ if ($_SESSION['logged_in']) {
 
     <?php
     $user_id = 'user_id';
-    $username = $_SESSION[$user_id];
-    $result = get_abonament($user_id, $username);
+    $query = "SELECT abon_id, expiration_date, begin_date FROM abonament WHERE user_id = $_SESSION[$user_id] AND tip_id = 1 ";
+    $result = mysqli_query($db, $query);
     $nn = mysqli_fetch_assoc($result);
     $expiration_date = $nn['expiration_date'];
     $begin_date = $nn['begin_date'];
     if (mysqli_num_rows($result) == 0) {
         ?>
+
         <div class="container bg-light" id="contain" style="height:100%;">
-            <h2 style="margin-top:7%; margin-bottom:3%">Creeaza-ti propriul abonament la STB </h2>
+            <h2 style="margin-top:7%; margin-bottom:3%">Creeaza-ti propriul abonament la METROREX </h2>
 
             <?php
             if (isset($successMsg)) {
@@ -51,7 +50,7 @@ if ($_SESSION['logged_in']) {
 
             <div class="form-row" style="margin-top:30px">
 
-                <form method="post" action="stb-abonament.php">
+                <form method="post" action="metrorex-abonament.php">
                     <div class="form-group">
                         <label for="inputDate">Data de incepere a abonamentului </label>
                         <input type="text" size="20" id="inputDate" value="05-05-2019" class="form_datetime"
@@ -69,7 +68,7 @@ if ($_SESSION['logged_in']) {
 
                 <div class="col-md-6" style="left:10%" id="hiddenDiv" style="display:none">
                     <h5> Abonamentul <!--cu id-ul <?php echo $_SESSION['user_id']; ?> --> va fi creat imediat. Il vei
-                        putea vedea pe profilul tau dupa plata sumei de 25 de lei..</h5>
+                        putea vedea pe profilul tau dupa plata sumei de 35 de lei..</h5>
 
                     <!-- <a href="stb-pay.php" class="btn btn-lg btn-primary" > Continua la checkout</a>-->
                 </div>

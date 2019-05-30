@@ -20,42 +20,53 @@ if ($_SESSION['logged_in']) {
     <?php } else { ?>
         <script src="JS/menu.js"></script>
     <?php } ?>
-    <div class="container mb-5" style="height:100vh;background-color: #0E0E0E;">
-        <div class="row">
-            <div class="col-md-6" style="background-color:#0E0E0E;top:0">
-                <img class="img-rounded img-responsive" src="Imagini/cfr-bilete.png" class="img-rounded img-responsive"
-                     alt="Bilete Tren" style="width:70%; margin: auto; display:block">
-                <div>
-                    <p>
-                        <a href="cfr-rezervare.php" class="btn  btn-outline-success my-2 my-sm-0"
-                           style="margin: auto; display:table;">Cauta Bilet</a>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6 col-md-offset-4" style="background-color:#0E0E0E;top:0">
-                <div class="hovereffect">
-                    <img class="img-rounded img-responsive" src="Imagini/cfr-route.png"
-                         class="img-rounded img-responsive" alt="Route" style="width:44%; margin: auto; display:block">
-                    <div class="overlay">
-                        <p>
-                            <a href="cfr-mersul-trenurilor.php" class="btn  btn-outline-success my-2 my-sm-0"
-                               style="margin: auto; display:table;">Mersul Trenurilor</a>
-                        </p>
-                    </div>
-                </div>
+    <div class="container">
+        <div class="card alert alert-warning my-5 py-4 text-center">
+            <div class="card-body">
+                <p class="m-0">Atentie! Se vor prezenta controlorului
+                    pagina 'Biletele Mele', precum si 'My Account', in posesia CI si a
+                    Legitimatiei de Transport.</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-8" style="background-color:#0E0E0E;left:30%;top:0">
-                <img class="img-rounded img-responsive" src="Imagini/cfr-istoric.png" class="img-rounded img-responsive"
-                     alt="History " style="width:44%; margin: auto; display:block">
-                <div>
-                    <p>
-                        <a href="my_account_history.php" class="btn  btn-outline-success my-2 my-sm-0"
-                           style="margin: auto; display:table;">Istoric Calatorii</a>
-                    </p>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100 bg-dark text-white">
+                    <img class="card-img-top" src="Imagini/cfr-bilete.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h2 class="card-title">1: Mersul Trenurilor</h2>
+                        <p class="card-text">Vezi tabela cu liniile disponibile, in scopul cautarii unei
+                            rute convenabile.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="cfr-mersul-trenurilor.php" class="btn btn-outline-success my-2 my-sm-0 btn-block">consulta</a>
+                    </div>
                 </div>
-
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100 bg-dark text-white">
+                    <img class="card-img-top" src="Imagini/cfr-route.PNG" alt="Card image cap">
+                    <div class="card-body">
+                        <h2 class="card-title">2: Cauta & Rezerva</h2>
+                        <p class="card-text">Cauta trenurile disponibile, in detaliu si rezerva-ti biletul.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="cfr-rezervare.php" class="btn btn-outline-success my-2 my-sm-0 btn-block">cauta</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100 bg-dark text-white">
+                    <img class="card-img-top" src="Imagini/cfr-istoric.PNG" alt="Card image cap">
+                    <div class="card-body">
+                        <h2 class="card-title">3: Biletele Mele</h2>
+                        <p class="card-text">Aici gasesti o tabela cu datele tuturor biletelor achizitionate. Drum
+                            bun!</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="my_account_bilete.php"
+                           class="btn btn-outline-success my-2 my-sm-0 btn-block">verifica</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

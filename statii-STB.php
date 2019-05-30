@@ -1,4 +1,6 @@
-<?php include('server.php');
+<?php
+include_once('server.php');
+include_once('controller-stb-statii.php');
 if ($_SESSION['logged_in']) {
     ?>
 
@@ -143,33 +145,30 @@ if ($_SESSION['logged_in']) {
     <div class="container bg-light" style="height:100vh;">
         <table class="table table-light table-striped table-hover">
             <tr>
-                <th>Numarul Liniei</th>
-                <th>Linie</th>
-                <th>Statie plecare</th>
-                <th>Statie sosire</th>
+                <th>Numar statie</th>
+                <th>Numar linie</th>
+                <th>Nume statie</th>
+                <th>Adresa</th>
                 <th>Optiune</th>
             </tr>
             <?php
-            $db = mysqli_connect('localhost', 'root', '', 'transport');
+            if (isset($_POST['cauta-linie'])) {
 
+                $linie_id = mysqli_real_escape_string($db, $_POST['linie_id']);
+                $result = get_statii($linie_id);
+                while ($rows = mysqli_fetch_array($result)) {
 
-            $show = "SELECT s.linie_id AS linie_id, s.denumire_linie AS denumire_linie, s.plecare AS plecare, s.destinatie as sosire
-                            FROM transport.linie s 
-                         WHERE s.linie_id BETWEEN 1 and 4
-                         ";
-            /* $result = mysqli_query($db, $show);*/
-            $result = $db->query($show);
-            while ($rows = mysqli_fetch_array($result)) {
-                echo "<tr class=''>";
-                echo " <form action=\"statii-STB.php\" method=\"post\" class=\"form-inline justify-content-center\">";
-                echo "<td><input type = 'hidden' name = 'linie_id' value = " . $rows['linie_id'] . ">" . $rows['linie_id'] . "</td>";
-                echo "<td><input type = 'hidden' name = 'denumire_linie' value = " . $rows['denumire_linie'] . ">" . $rows['denumire_linie'] . "</td>";
-                echo "<td><input type = 'hidden' name = 'plecare' value = " . $rows['plecare'] . ">" . $rows['plecare'] . "</td>";
-                echo "<td><input type = 'hidden' name = 'sosire' value = " . $rows['sosire'] . ">" . $rows['sosire'] . "</td>";
-                echo "<td>";
-                echo "<input type=\"submit\" name=\"cauta-linie\" value=\"Vezi linii\" class=\"btn btn-primary\" >";
-                echo "</td>";
-                echo "</form>";
+                    echo "<tr class=''>";
+                    echo " <form action=\"cfr-config-bilet.php\" method=\"post\" class=\"form-inline justify-content-center\">";
+                    echo "<td><input type = 'hidden' readonly name = 'statie_id' value = " . $rows['statie_id'] . ">" . $rows['statie_id'] . "</td>";
+                    echo "<td><input type = 'hidden' readonly name = 'linie_id' value = " . $rows['linie_id'] . ">" . $rows['linie_id'] . "</td>";
+                    echo "<td><input type = 'hidden' readonly name = 'denumire_statie' value = " . $rows['denumire_statie'] . ">" . $rows['denumire_statie'] . "</td>";
+                    echo "<td><input type = 'hidden' readonly name = 'adresa' value = " . $rows['adresa'] . ">" . $rows['adresa'] . "</td>";
+                    echo "<td>";
+                    echo "<button class=\"btn btn-outline-primary my-2 my-sm-0 btn-block\" type=\"submit\">Adaugare la favorite</button>";
+                    echo "</td>";
+                    echo "</form>";
+                }
             }
 
             ?>

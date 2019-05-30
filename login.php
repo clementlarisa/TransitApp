@@ -1,5 +1,5 @@
 <?php
-include ('server.php');
+include('server.php');
 ?>
 
 <html>
@@ -10,7 +10,7 @@ include ('server.php');
 <body>
     <div class="container">
         <div style = "margin-top:10px">
-            <img src="Imagini/LogoMakr_6xUTaB.png"  style = "width: 12%; height: 10%;">
+            <img src="Imagini/LogoMakr_6xUTaB.png" style = "width: 12%; height: 10%;">
             <h1 style = "display: inline; margin-left:5px">Student Transport</h1>
         </div>
         <div style="width: 500px; margin: 50px auto;">
